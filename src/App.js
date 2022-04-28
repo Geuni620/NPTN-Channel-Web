@@ -1,12 +1,14 @@
 import './App.css';
 import Nav from './components/Nav/Nav';
-import Contacts from './components/Contacts/Contact';
+import ListContainer from './components/ListContainer/ListContainer';
+import DashBoard from './components/DashBoard/DashBoard';
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Contacts />
+      <ListContainer />
+      <DashBoard />
     </div>
   );
 }
