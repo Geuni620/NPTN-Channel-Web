@@ -1,0 +1,28 @@
+/* Font size */
+:root {
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Color */
+  --color-logo: #012f64;
+  --color-light-blue: #cbe2f9;
+  --color-blue: #0474e3;
+  --color-dark-blue: #085ca9;
+  --color-gray: #9e9e9e;
+  --color-footer: #748390;
+  --color-black: #1b1b1b;
+  --color-white: #fff;
+  --color-green: #66c200;
+
+  /* border */
+  --border-radius: 3px;
+  --border-bottom: 1px #dbdbdb solid;
+}
