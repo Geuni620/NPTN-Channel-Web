@@ -1,5 +1,5 @@
-import React from "react";
-import "./ChatList.css";
+import React from 'react';
+import './ChatList.css';
 
 const ChatList = () => {
   return <div>chatlist</div>;
