@@ -1,8 +1,9 @@
 import React from 'react';
+import Chat from './Chat/Chat';
 import './ChatList.css';
 
 const ChatList = () => {
-  return <div>chatlist</div>;
+  return <Chat />;
 };
 
 export default ChatList;
