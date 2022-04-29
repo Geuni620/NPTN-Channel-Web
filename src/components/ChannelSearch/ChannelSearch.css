@@ -1,22 +1,3 @@
-/* .list__icon > svg {
-  position: static;
-  width: 24px;
-  height: 24px;
-  left: 8px;
-  top: calc(50% - 24px / 2);
-  background: #f4f5f7;
-} */
-
-/*
-.channel-search__container {
-  background-color: red;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 16px;
-}
-
 .channel-search__input__wrapper {
   display: flex;
   justify-content: center;
@@ -45,10 +26,6 @@
   font-family: Helvetica Neue, sans-serif;
   font-size: 16px;
   outline: none;
-}
-
-::placeholder {
-  color: rgba(255, 255, 255, 0.66);
 }
 
 .channel-search__results {
@@ -133,30 +110,40 @@
   line-height: 120%;
   color: #2c2c30;
 }
-*/
 
-.channel-search__input__text {
+/* 여기서부터 제작 */
+.channel-search__container {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
   left: 16px;
   right: 16px;
   top: 72px;
-  padding: 10px 50px 10px 38px;
-  border: none;
   border-radius: 3px;
   background: #f4f5f7;
 }
 
-.channel-search__input__text::placeholder {
+.channel-search__input__text {
+  width: 210px;
+  height: 20px;
+  border-radius: 3px;
+  background: #f4f5f7;
   color: #7a869a;
-  font-weight: 400;
   font-size: 13px;
   line-height: 20px;
 }
 
-.list_icon {
+.channel-search__input__text::placeholder {
+  color: #7a869a;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.channel-search__container > .list__icon {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  background: #f4f5f7;
+  left: 8px;
+  top: calc(50% - 24px / 2);
 }
