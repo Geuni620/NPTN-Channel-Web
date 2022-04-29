@@ -8,6 +8,7 @@ import 'stream-chat-react/dist/css/index.css';
 import './App.css';
 
 const App = () => {
+  /*
   const api_key = 'sneuhatc2xf3';
   const userId = getUserId();
 
@@ -27,17 +28,11 @@ const App = () => {
   useEffect(() => {
     getToken();
   }, [getToken]);
-
-  // const client = StreamChat.getInstance(api_key, {
-  //   enableInsights: true,
-  //   enableWSFallback: true,
-  // });
-
-  // client.connectUser({ id: userId, name: userId }, accessToken);
+  */
 
   return (
     <div className="App">
-      {!isLogged && <Login setIsLogged={setIsLogged} />}
+      {/* {getUserId() === null && !isLogged && <Login setIsLogged={setIsLogged} />} */}
       <Nav />
       <ListContainer />
     </div>

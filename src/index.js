@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -28,14 +28,13 @@ const reducer = (state = <ChatList />, action) => {
 
 const store = createStore(reducer, [<ChatList key="0" />]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
     </Provider>
-  </BrowserRouter>
+  </BrowserRouter>,
+  document.getElementById('root')
 );
