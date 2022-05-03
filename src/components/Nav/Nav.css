@@ -1,0 +1,175 @@
+.nav {
+  position: absolute;
+  width: 240px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #1b1b1b;
+  mix-blend-mode: normal;
+}
+
+.nav__items {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 320px;
+  top: 66px;
+  left: 16px;
+  right: 16px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 208px;
+  height: 40px;
+  left: 0px;
+  top: 280px;
+  background: rgba(255, 255, 255, 0.0001);
+  mix-blend-mode: normal;
+  border-radius: 3px;
+}
+
+.nav__item:nth-child(4) {
+  pointer-events: none;
+}
+
+.nav__item--active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 208px;
+  height: 40px;
+  left: 0px;
+  top: 280px;
+  background: rgba(255, 255, 255, 0.1);
+  mix-blend-mode: normal;
+  border-radius: 3px;
+}
+
+.nav__item--active > .nav__label {
+  color: #ffffff;
+}
+
+.nav__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.nav__item--active > .nav__icon path {
+  fill: white;
+}
+
+.nav__label {
+  position: absolute;
+  height: 40px;
+  left: 50px;
+  right: 10px;
+  color: #999999;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: start;
+}
+
+.nav__num {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 16px;
+  right: 10px;
+  padding: 0px 5px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.nav__text {
+  position: absolute;
+  height: 40px;
+  left: 50px;
+  right: 10px;
+  top: calc(50% - 40px / 2);
+  color: #999999;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+.nav__avatar {
+  position: absolute;
+  height: 56px;
+  left: 8px;
+  right: 8px;
+  bottom: 10px;
+}
+
+.nav__avatar--image {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 8px;
+  top: 8px;
+  background: url('https://avatars.githubusercontent.com/u/56650238?v=4');
+  border-radius: 64px;
+}
+
+.nav__avatar--name {
+  position: absolute;
+  height: 20px;
+  left: 58px;
+  right: 8px;
+  top: 9px;
+  color: #f4f5f7;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: start;
+}
+
+.nav__avatar--name:last-child {
+  position: absolute;
+  height: 14px;
+  left: 58px;
+  right: 8px;
+  top: 29px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: start;
+}
+
+.nav__divider {
+  position: absolute;
+  height: 2px;
+  left: 0px;
+  right: 0px;
+  top: 140px;
+  background: #414141;
+  border-radius: 1px;
+}
+
+.nav__avatar--active {
+  position: absolute;
+  left: 70%;
+  right: 0%;
+  top: 70%;
+  bottom: 0%;
+  background: #36b37e;
+  border: 1.6px solid #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
