@@ -1,0 +1,31 @@
+.profile-dashboard {
+  position: absolute;
+  left: 480px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #ffffff;
+}
+
+.dashboard-background {
+  position: absolute;
+  height: 148px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.avatar {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  left: 32px;
+  top: 82px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  border-radius: 64px;
+}

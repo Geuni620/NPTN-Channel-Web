@@ -110,6 +110,7 @@
   left: 8px;
   right: 8px;
   bottom: 10px;
+  cursor: pointer;
 }
 
 .nav__avatar--image {

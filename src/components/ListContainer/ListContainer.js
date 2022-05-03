@@ -1,15 +1,11 @@
 import React from 'react';
-import ChatList from '../ChatList/ChatList';
-import Contacts from '../Contacts/Contacts';
+import { useSelector } from 'react-redux';
 import './ListContainer.css';
 
 const ListContainer = () => {
-  return (
-    <div>
-      <ChatList />
-      <Contacts />
-    </div>
-  );
+  const selectedPage = useSelector(state => state);
+
+  return <div>{selectedPage}</div>;
 };
 
 export default ListContainer;
