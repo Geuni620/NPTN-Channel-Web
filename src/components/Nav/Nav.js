@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Cube from '../../assets/Cube';
 import Anchor from '../../assets/Anchor';
 import Arrow from '../../assets/Arrow';
@@ -8,9 +9,17 @@ import Setting from '../../assets/Setting';
 import './Nav.css';
 
 const Nav = () => {
+  const dispatch = useDispatch();
   const [idCheck, setIdCheck] = useState('');
   const handleIdRead = id => {
     setIdCheck(id);
+  };
+
+  const showPage = pageName => {
+    if (pageName !== 'Chats' && pageName !== 'Contacts') return;
+
+    if (pageName === 'Chats') dispatch({ type: 'chatList' });
+    else if (pageName === 'Contacts') dispatch({ type: 'contacts' });
   };
 
   return (
@@ -18,12 +27,14 @@ const Nav = () => {
       <ul className="nav__items">
         {NAV_DATA.map(({ id, icon, name, count }) => {
           const nav4th = id === 4;
+
           return (
             <li
               check={idCheck}
               key={id}
               onClick={() => {
                 handleIdRead(id);
+                showPage(name);
               }}
               className={id === idCheck ? 'nav__item--active' : 'nav__item'}
             >
@@ -38,7 +49,12 @@ const Nav = () => {
         })}
       </ul>
 
-      <div className="nav__avatar">
+      <div
+        className="nav__avatar"
+        onClick={() => {
+          dispatch({ type: 'profile' });
+        }}
+      >
         <div className="nav__avatar--image">
           {/* 이미지 넣을 것 */}
 
