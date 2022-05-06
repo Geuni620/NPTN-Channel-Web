@@ -1,8 +1,21 @@
 import React from 'react';
+import Silders from '../../assets/Silders';
+import UserPlus from '../../assets/UserPlus';
 import './Contacts.css';
 
 const Contacts = () => {
-  return <div>contacts</div>;
+  return (
+    <div className="contacts">
+      <header className="contacts__header">
+        <span className="contacts__title">Contacts</span>
+        <div className="contacts__icons">
+          <Silders />
+          <UserPlus />
+        </div>
+      </header>
+      {/* <ChannelSearch /> */}
+    </div>
+  );
 };
 
 export default Contacts;
