@@ -1,0 +1,44 @@
+.contacts {
+  position: absolute;
+  width: 320px;
+  left: 240px;
+  top: 0px;
+  bottom: 0px;
+  background: #ffffff;
+}
+
+.contacts__header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: 0px;
+  right: 0px;
+  top: 22px;
+  padding: 0px 20px 20px 20px;
+}
+
+.contacts__title {
+  width: 103px;
+  height: 28px;
+  left: 20px;
+  top: 22px;
+  color: #121212;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.contacts__icons {
+  display: flex;
+  width: 64px;
+  height: 32px;
+  right: 16px;
+  top: 20px;
+}
+
+.contacts__icons > .list__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 6px;
+}
