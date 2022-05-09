@@ -7,7 +7,7 @@ import './ChannelSearch.css';
 import { ResultsDropdown } from './ResultsDropdown';
 import SearchIcon from '../../assets/SearchIcon';
 
-const ChannelSearch = () => {
+export const ChannelSearch = () => {
   const { client, setActiveChannel } = useChatContext();
 
   const [allChannels, setAllChannels] = useState([]);
@@ -142,5 +142,3 @@ const ChannelSearch = () => {
     </div>
   );
 };
-
-export default ChannelSearch;

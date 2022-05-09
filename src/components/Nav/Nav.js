@@ -14,7 +14,6 @@ const Nav = () => {
   const handleIdRead = id => {
     setIdCheck(id);
   };
-
   const showPage = pageName => {
     if (pageName !== 'Chats' && pageName !== 'Contacts') return;
 
@@ -27,7 +26,6 @@ const Nav = () => {
       <ul className="nav__items">
         {NAV_DATA.map(({ id, icon, name, count }) => {
           const nav4th = id === 4;
-
           return (
             <li
               check={idCheck}
@@ -39,7 +37,6 @@ const Nav = () => {
               className={id === idCheck ? 'nav__item--active' : 'nav__item'}
             >
               {icon}
-
               <span className={nav4th ? 'hidden' : 'nav__label'}>{name}</span>
               <span className={nav4th ? 'nav__divider' : 'nav__num'}>
                 {nav4th ? '' : count}
@@ -48,7 +45,6 @@ const Nav = () => {
           );
         })}
       </ul>
-
       <div
         className="nav__avatar"
         onClick={() => {
@@ -57,7 +53,6 @@ const Nav = () => {
       >
         <div className="nav__avatar--image">
           {/* 이미지 넣을 것 */}
-
           <div className="nav__avatar--active" />
         </div>
         <div className="nav__avatar--name">Steve Yoo</div>
