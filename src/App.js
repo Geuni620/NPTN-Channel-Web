@@ -8,11 +8,7 @@ import 'stream-chat-react/dist/css/index.css';
 import './App.css';
 
 const App = () => {
-  /*
-  const api_key = 'sneuhatc2xf3';
   const userId = getUserId();
-
-  const [accessToken, setAccessToken] = useState();
   const [isLogged, setIsLogged] = useState(false);
 
   const getToken = useCallback(async () => {
@@ -21,18 +17,16 @@ const App = () => {
     const token = userId
       ? await users.filter(user => user.user_id === userId)[0].token
       : '';
-    setAccessToken(token);
     setGetstreamToken(token);
   }, [userId]);
 
   useEffect(() => {
     getToken();
   }, [getToken]);
-  */
 
   return (
     <div className="App">
-      {/* {getUserId() === null && !isLogged && <Login setIsLogged={setIsLogged} />} */}
+      {getUserId() === null && !isLogged && <Login setIsLogged={setIsLogged} />}
       <Nav />
       <ListContainer />
     </div>

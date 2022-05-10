@@ -61,6 +61,7 @@ export const ResultsDropdown = ({
 
   return (
     <div className="channel-search__results">
+      hi
       <p className="channel-search__results-header">Channels</p>
       {loading && !teamChannels.length && (
         <p className="channel-search__results-header">

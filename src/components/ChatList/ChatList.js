@@ -7,9 +7,15 @@ import { ChannelListContainer } from '../ChannelListContainer/ChannelListContain
 import { ChannelContainer } from '../ChannelContainer/ChannelContainer';
 import 'stream-chat-react/dist/css/index.css';
 
+import { getUserId, getGetstreamToken } from '../../utils';
+
+// const userToken = getGetstreamToken();
+// const user = getUserId();
+// const apiKey = '4qaxnhjezwsf';
 const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
 const apiKey = '3hr22a3t59ef';
 const user = 'geuni620';
+
 const theme = 'light';
 
 const i18nInstance = new Streami18n({
@@ -39,28 +45,32 @@ const ChatList = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <Chat {...{ client, i18nInstance }} theme={`team ${theme}`}>
-      <ChannelListContainer
-        {...{
-          isCreating,
-          filters,
-          options,
-          setCreateType,
-          setIsCreating,
-          setIsEditing,
-          sort,
-        }}
-      />
-      <ChannelContainer
-        {...{
-          createType,
-          isCreating,
-          isEditing,
-          setIsCreating,
-          setIsEditing,
-        }}
-      />
-    </Chat>
+    <div>
+      <Chat {...{ client, i18nInstance }} theme={`team ${theme}`}>
+        <ChannelListContainer
+          className="chat-list"
+          {...{
+            isCreating,
+            filters,
+            options,
+            setCreateType,
+            setIsCreating,
+            setIsEditing,
+            sort,
+          }}
+        />
+        <ChannelContainer
+          className="chat-dashboard"
+          {...{
+            createType,
+            isCreating,
+            isEditing,
+            setIsCreating,
+            setIsEditing,
+          }}
+        />
+      </Chat>
+    </div>
   );
 };
 

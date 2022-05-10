@@ -5,7 +5,6 @@ import { ChannelInner } from './Channel/ChannelInner';
 import { ChannelEmptyState } from './Channel/ChannelEmptyState';
 import { CreateChannel } from './Channel/CreateChannel';
 import { EditChannel } from './Channel/EditChannel';
-import { TeamMessage } from './TeamMessage/TeamMessage';
 import { TeamMessageInput } from './TeamMessage/TeamMessageInput';
 import { CloseThreadIcon } from '../../assets/Chats/';
 
@@ -70,9 +69,6 @@ export const ChannelContainer = props => {
       <Channel
         EmptyStateIndicator={ChannelEmptyState}
         Input={TeamMessageInput}
-        Message={(messageProps, i) => (
-          <TeamMessage key={i} {...messageProps} {...{ setPinsOpen }} />
-        )}
         ThreadHeader={threadProps => (
           <ThreadHeader {...threadProps} {...{ setPinsOpen }} />
         )}
