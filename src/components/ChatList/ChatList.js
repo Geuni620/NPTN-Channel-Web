@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { StreamChat } from 'stream-chat';
-import { useSelector } from 'react-redux';
-import { Chat, enTranslations, Streami18n } from 'stream-chat-react';
+import {
+  Chat,
+  enTranslations,
+  Streami18n,
+  useChatContext,
+} from 'stream-chat-react';
 
 import { ChannelListContainer } from '../ChannelListContainer/ChannelListContainer';
 import { ChannelContainer } from '../ChannelContainer/ChannelContainer';
 import 'stream-chat-react/dist/css/index.css';
+
+import { getUserId, getGetstreamToken } from '../../utils';
 
 const userToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ._2DXYPW-Lh9ZX7UUcP4AyGBE9B9JEf2apSOzKqirxnI';
@@ -29,8 +35,6 @@ const options = { state: true, watch: true, presence: true, limit: 10 };
 const sort = { last_message_at: -1, updated_at: -1 };
 
 const ChatList = () => {
-  const selectedPage = useSelector(state => state);
-
   const [createType, setCreateType] = useState('');
   const [isCreating, setIsCreating] = useState(false);
   const [isEditing, setIsEditing] = useState(false);

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import ChatList from './components/ChatList/ChatList';
 import Contacts from './components/Contacts/Contacts';
@@ -30,9 +31,11 @@ const store = createStore(reducer, [<ChatList key="0" />]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
+  </BrowserRouter>
 );
