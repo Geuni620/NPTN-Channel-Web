@@ -12,12 +12,10 @@ import './styles/common.css';
 import './styles/reset.css';
 import './styles/variables.css';
 
-const client = '';
-
 const reducer = (state = <ChatList />, action) => {
   switch (action.type) {
     case 'chatList':
-      return <ChatList client={client} />;
+      return <ChatList />;
     case 'contacts':
       return <Contacts />;
     case 'profile':

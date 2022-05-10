@@ -97,7 +97,6 @@ export const ChannelSearch = () => {
       setAllChannels(channels.concat(users));
     } catch (e) {
       setQuery('');
-      console.log(e);
     }
 
     setLoading(false);
