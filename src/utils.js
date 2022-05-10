@@ -1,6 +1,5 @@
 const googleToken = 'googleToken';
 const getstreamToken = 'getstreamToken';
-const userName = 'userName';
 const userId = 'userId';
 
 export const setGoogleToken = restoken => {
@@ -9,14 +8,6 @@ export const setGoogleToken = restoken => {
 
 export const getGoogleToken = () => {
   return localStorage.getItem(googleToken);
-};
-
-export const setUserName = resUserName => {
-  return localStorage.setItem(userName, resUserName);
-};
-
-export const getUserName = () => {
-  return localStorage.getItem(userName);
 };
 
 export const setUserId = resUserId => {

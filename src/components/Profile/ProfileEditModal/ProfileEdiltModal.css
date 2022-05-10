@@ -1,0 +1,182 @@
+.profileEditModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: hsla(0, 0%, 0%, 0.1);
+  transition: all 0.6s ease;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.profileEditModal.show {
+  transform: translateX(-480px);
+  opacity: 1;
+  z-index: 200;
+}
+
+.btn__close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  cursor: pointer;
+}
+
+header > .close {
+  width: 15px;
+  cursor: pointer;
+
+  background-color: red;
+}
+
+.modal__box {
+  position: absolute;
+  width: 360px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #ffffff;
+  box-shadow: 0px 18px 28px rgba(9, 30, 66, 0.15),
+    0px 0px 1px rgba(9, 30, 66, 0.31);
+  z-index: 200 important!;
+}
+
+.header__title {
+  position: absolute;
+  width: 123px;
+  height: 28px;
+  left: 32px;
+  top: 67px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #1b1b1b;
+}
+
+.header__line {
+  position: absolute;
+  top: 120px;
+  width: 360px;
+  height: 1px;
+  background: #ebecf0;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.edit__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 36px 0px 60px 0;
+  gap: 20px;
+  position: absolute;
+  width: 296px;
+  height: 592px;
+  left: 32px;
+  top: 116px;
+}
+
+label {
+  width: 33px;
+  height: 16px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #6b778c;
+}
+
+input {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 10px 8px;
+  width: 100%;
+  height: 40px;
+  gap: 10px;
+  background: #f4f5f7;
+  border-radius: 3px;
+  border: 0;
+  outline: 0;
+  color: #1b1b1b;
+}
+
+input::placeholder,
+.editable input {
+  padding: 0 10px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7a869a;
+}
+
+.btn__edit {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  margin-left: 8px;
+  width: 57px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.0001);
+  border: 0.8px solid #c1c7d0;
+  border-radius: 4px;
+}
+
+.editable {
+  display: flex;
+  width: 100%;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  width: 77px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.btns {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  height: 88px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #ffffff;
+  margin: 0;
+}
+
+.btn__cancel {
+  background: rgba(9, 30, 66, 0.04);
+  color: #42526e;
+}
+
+.btn__save {
+  background: #242424;
+  color: #ffffff;
+}
+
+.bottom__line {
+  position: absolute;
+  bottom: 120px;
+  left: -30px;
+  width: 360px;
+  height: 1px;
+  background: #ebecf0;
+}

@@ -4,7 +4,7 @@ import { GoogleAuthProvider } from '@firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { signInWithGoogle, db } from '../../service/firebase';
 import { KAKAO_AUTH_URL } from './KakaoAuth';
-import { setGoogleToken, setUserName, setUserId } from '../../utils';
+import { setGoogleToken, setUserId } from '../../utils';
 
 import './Login.css';
 
@@ -15,8 +15,11 @@ import { RiKakaoTalkFill } from 'react-icons/ri';
 const Login = ({ setIsLogged }) => {
   const { search } = useLocation();
 
-  const sendUserId = userId => {
-    setDoc(doc(db, 'users', userId), { user_id: userId });
+  const sendUserInfo = (userId, userName) => {
+    setDoc(doc(db, 'users', userId), {
+      user_id: userId,
+      user_name: userName,
+    });
   };
 
   const handleLogin = e => {
@@ -29,9 +32,8 @@ const Login = ({ setIsLogged }) => {
         const userId = res.user.reloadUserInfo.email.split('@')[0];
 
         setGoogleToken(token);
-        setUserName(userName);
         setUserId(userId);
-        sendUserId(userId);
+        sendUserInfo(userId, userName);
         setIsLogged(true);
       })
       .catch(error => {
@@ -71,7 +73,7 @@ const Login = ({ setIsLogged }) => {
             <FcGoogle className="login-form__btn__icon" />
             <span className="login-form__btn__text">Sign in with Google</span>
           </button>
-          <button className="login-form__btn naver" onClick={handleLogin}>
+          <button className="login-form__btn naver">
             <SiNaver className="login-form__btn__icon" />
             <span className="login-form__btn__text">Sign in with Naver</span>
           </button>

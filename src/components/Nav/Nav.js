@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { getUserId } from '../../utils';
+
 import Cube from '../../assets/Cube';
 import Anchor from '../../assets/Anchor';
 import Arrow from '../../assets/Arrow';
@@ -55,7 +58,7 @@ const Nav = () => {
           {/* 이미지 넣을 것 */}
           <div className="nav__avatar--active" />
         </div>
-        <div className="nav__avatar--name">Steve Yoo</div>
+        <div className="nav__avatar--name">{getUserId()}</div>
         <div className="nav__avatar--name">Neptune Cloud</div>
       </div>
     </div>

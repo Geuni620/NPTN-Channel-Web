@@ -26,9 +26,15 @@ const App = () => {
 
   return (
     <div className="App">
-      {getUserId() === null && !isLogged && <Login setIsLogged={setIsLogged} />}
-      <Nav />
-      <ListContainer />
+      {getUserId() === null && !isLogged ? (
+        <Login setIsLogged={setIsLogged} />
+      ) : (
+        <>
+          {' '}
+          <Nav />
+          <ListContainer />
+        </>
+      )}
     </div>
   );
 };

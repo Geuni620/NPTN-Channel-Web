@@ -7,15 +7,54 @@
   background: #ffffff;
 }
 
+.success__msg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  width: 400px;
+  height: 64px;
+  background: #00875a;
+  color: #fff;
+  box-shadow: 0px 8px 12px rgba(9, 30, 66, 0.15);
+  border-radius: 3px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 200 !important;
+}
+
+.success__msg.show {
+  opacity: 1;
+  z-index: 200 !important;
+}
+
+.success__msg span {
+  margin-left: 10px;
+}
+
 .dashboard-background {
   position: absolute;
   height: 148px;
   left: 0px;
   right: 0px;
   top: 0px;
-
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+}
+
+.background__edit__btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  color: black;
+  background-color: #fff;
+  font-size: 14px;
+  z-index: 100 !important;
 }
 
 .avatar {
@@ -24,8 +63,108 @@
   height: 128px;
   left: 32px;
   top: 82px;
-
   border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
   box-sizing: border-box;
-  border-radius: 64px;
+  background-color: #ffffff;
+}
+
+.avatar__img {
+  border-radius: 50%;
+}
+
+.avatar__edit__btn {
+  position: absolute;
+  bottom: 15px;
+  right: 5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  color: black;
+  background-color: #fff;
+  font-size: 14px;
+  z-index: 100 !important;
+}
+
+.basic__user {
+  font-size: 50px;
+  margin-top: 40px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 6px;
+  position: absolute;
+  left: 32px;
+  top: 226px;
+}
+
+.userInfo__name {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #1b1b1b;
+  flex: none;
+  flex-grow: 0;
+}
+
+.userInfo__company {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #5e5e5e;
+  flex: none;
+  flex-grow: 0;
+}
+
+.userInfo__description {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #7c7c7c;
+}
+
+.description__edit__btn {
+  display: inline-block;
+  width: 20px;
+}
+
+.profile__edit__btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px 10px 12px;
+  gap: 4px;
+  width: 120px;
+  height: 40px;
+  right: 32px;
+  top: 170px;
+  background: #242424;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+textarea {
+  padding: 10px;
+  width: 400px;
+  height: 100px;
+  padding: 10px;
+  resize: none;
 }
