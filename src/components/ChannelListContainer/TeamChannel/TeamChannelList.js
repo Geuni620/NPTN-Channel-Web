@@ -1,5 +1,6 @@
 import React from 'react';
 import './TeamChannelList.css';
+import { SearchIcon } from '../../../assets/SearchIcon';
 
 const ChannelList = props => {
   const {
@@ -32,7 +33,12 @@ const ChannelList = props => {
     );
   }
 
-  return <div className="team-channel-list">{children}</div>;
+  return (
+    <div className="team-channel-list">
+      {/* <SearchIcon /> */}
+      {children}
+    </div>
+  );
 };
 
 export const TeamChannelList = React.memo(ChannelList);

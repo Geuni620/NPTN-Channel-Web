@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useChatContext } from 'stream-chat-react';
-import { UserList } from './UserList';
+
 import './CreateChannel.css';
+
+import { UserList } from './UserList';
+
+import { CloseCreateChannel } from '../../../assets/Chats';
 
 const ChannelNameInput = props => {
   const { channelName = '', setChannelName } = props;
@@ -31,7 +35,7 @@ export const CreateChannel = props => {
   const { client, setActiveChannel } = useChatContext();
 
   const [channelName, setChannelName] = useState('');
-  const [selectedUsers, setSelectedUsers] = useState([client.userID]);
+  const [selectedUsers, setSelectedUsers] = useState([client.userID || '']);
 
   const createChannel = async event => {
     event.preventDefault();
@@ -62,13 +66,11 @@ export const CreateChannel = props => {
             ? 'Create a New Channel'
             : 'Send a Direct Message'}
         </p>
-
-        {/* <CloseCreateChannel {...{ setIsCreating }} /> */}
+        <CloseCreateChannel {...{ setIsCreating }} />
       </div>
       {createType === 'team' && (
         <ChannelNameInput {...{ channelName, setChannelName }} />
       )}
-
       <UserList {...{ filters, setSelectedUsers }} />
       <div className="create-channel__button-wrapper" onClick={createChannel}>
         <p>

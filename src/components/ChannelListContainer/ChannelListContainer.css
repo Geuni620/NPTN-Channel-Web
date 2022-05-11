@@ -28,10 +28,50 @@
   line-height: 28px;
 }
 
-.channel-search__container > .list__icon {
+.container > .list__icon {
   position: absolute;
   width: 24px;
   height: 24px;
   top: 80px;
   left: 24px;
+  z-index: 1;
+}
+
+.str-chat__channel-search {
+  position: relative;
+  width: 288px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  left: 16px;
+  right: 16px;
+  top: 72px;
+  border-radius: 3px;
+  background: #f4f5f7;
+  padding: 10px 0px 10px 38px;
+}
+
+.str-chat-channel-list {
+  float: none;
+}
+
+.str-chat__channel-search input {
+  background: #f4f5f7 !important;
+  width: 203px;
+  height: 20px;
+
+  border: none;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  color: #7a869a;
+  padding: 0;
+}
+
+.str-chat__channel-search input:focus {
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: none;
 }

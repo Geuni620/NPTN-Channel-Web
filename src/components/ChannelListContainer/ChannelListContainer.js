@@ -5,7 +5,9 @@ import './ChannelListContainer.css';
 import { ChannelSearch } from '../ChannelSearch/ChannelSearch';
 
 import { TeamChannelList } from './TeamChannel/TeamChannelList';
-import { TeamChannelPreview } from './TeamChannel/TeamChannelPreview';
+import { SearchIcon } from '../../assets/SearchIcon';
+
+// import { TeamChannelPreview } from './TeamChannel/TeamChannelPreview';
 
 import PlusBox from '../../assets/PlusBox';
 
@@ -18,16 +20,27 @@ const customChannelMessagingFilter = channels => {
 };
 
 export const ChannelListContainer = props => {
-  const { filters, options, setCreateType, setIsCreating, setIsEditing, sort } =
-    props;
+  const {
+    filters,
+    options,
+    setCreateType,
+    setIsCreating,
+    setIsEditing,
+    sort,
+    type,
+  } = props;
 
   return (
     <div className="container">
       <header className="container__header">
         <span className="container__title">Chats</span>
-        <PlusBox {...{ setCreateType, setIsCreating, setIsEditing }} />
+        <PlusBox
+          {...{ setCreateType, setIsCreating, setIsEditing }}
+          type="messaging"
+        />
       </header>
-      <ChannelSearch />
+      <SearchIcon />
+
       {/* <ChannelList
         channelRenderFilterFn={customChannelTeamFilter}
         filters={filters[0]}
@@ -49,6 +62,10 @@ export const ChannelListContainer = props => {
         )}
       /> */}
       <ChannelList
+        showChannelSearch
+        additionalChannelSearchProps={{
+          placeholder: `Search people, company, message`,
+        }}
         channelRenderFilterFn={customChannelMessagingFilter}
         filters={filters[1]}
         options={options}
@@ -61,13 +78,6 @@ export const ChannelListContainer = props => {
             type="messaging"
           />
         )}
-        // Preview={previewProps => (
-        //   <TeamChannelPreview
-        //     {...previewProps}
-        //     {...{ setIsCreating, setIsEditing }}
-        //     type="messaging"
-        //   />
-        // )}
       />
     </div>
   );

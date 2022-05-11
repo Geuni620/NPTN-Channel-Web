@@ -6,9 +6,10 @@ import {
   useChatContext,
 } from 'stream-chat-react';
 
+import { SearchIconDash } from '../../../assets/SearchIconDash';
+import { InfoIcon } from '../../../assets/InfoIcon';
+import { PhoneIcon } from '../../../assets/PhoneIcon';
 import './TeamChannelHeader.css';
-
-import { ChannelInfo, PinIcon } from '../../../assets/Chats';
 
 export const TeamChannelHeader = ({ setIsEditing, setPinsOpen }) => {
   const { client } = useChatContext();
@@ -69,25 +70,16 @@ export const TeamChannelHeader = ({ setIsEditing, setPinsOpen }) => {
       ) : (
         <div className="team-channel-header__channel-wrapper">
           <p className="team-channel-header__name">{teamHeader}</p>
-          <span style={{ display: 'flex' }} onClick={() => setIsEditing(true)}>
-            <ChannelInfo />
-          </span>
+          <span
+            style={{ display: 'flex' }}
+            onClick={() => setIsEditing(true)}
+          />
         </div>
       )}
-      <div className="team-channel-header__right">
-        <p className="team-channel-header__right-text">
-          {getWatcherText(watcher_count)}
-        </p>
-        <div
-          className="team-channel-header__right-pin-wrapper"
-          onClick={e => {
-            closeThread(e);
-            setPinsOpen(prevState => !prevState);
-          }}
-        >
-          <PinIcon />
-          <p className="team-channel-header__right-text">Pins</p>
-        </div>
+      <div className="team-channel-header__channel-wrapper">
+        <InfoIcon />
+        <PhoneIcon />
+        <SearchIconDash />
       </div>
     </div>
   );
