@@ -61,13 +61,13 @@ export const ChannelListContainer = props => {
             type="messaging"
           />
         )}
-        Preview={previewProps => (
-          <TeamChannelPreview
-            {...previewProps}
-            {...{ setIsCreating, setIsEditing }}
-            type="messaging"
-          />
-        )}
+        // Preview={previewProps => (
+        //   <TeamChannelPreview
+        //     {...previewProps}
+        //     {...{ setIsCreating, setIsEditing }}
+        //     type="messaging"
+        //   />
+        // )}
       />
     </div>
   );

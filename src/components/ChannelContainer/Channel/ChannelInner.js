@@ -12,6 +12,7 @@ import {
 
 import { PinnedMessageList } from '../PinnedMessage/PinnedMessageList';
 import { ThreadMessageInput } from '../TeamMessage/ThreadMessageInput';
+import { TeamChannelHeader } from '../TeamMessage/TeamChannelHeader';
 
 export const GiphyContext = React.createContext({});
 
@@ -63,7 +64,7 @@ export const ChannelInner = props => {
     <GiphyContext.Provider value={giphyStateObj}>
       <div style={{ display: 'flex', width: '100%' }}>
         <Window>
-          {/* <TeamChannelHeader {...{ setIsEditing, setPinsOpen }} /> */}
+          <TeamChannelHeader {...{ setIsEditing, setPinsOpen }} />
           <MessageList
             disableQuotedMessages
             pinPermissions={pinnedPermissions}

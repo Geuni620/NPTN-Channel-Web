@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StreamChat } from 'stream-chat';
+
 import {
   Chat,
   enTranslations,
@@ -11,11 +12,10 @@ import { ChannelListContainer } from '../ChannelListContainer/ChannelListContain
 import { ChannelContainer } from '../ChannelContainer/ChannelContainer';
 import 'stream-chat-react/dist/css/index.css';
 
-import { getUserId, getGetstreamToken } from '../../utils';
-
-const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ._2DXYPW-Lh9ZX7UUcP4AyGBE9B9JEf2apSOzKqirxnI';
-const apiKey = 'sneuhatc2xf3';
+const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
+const apiKey = '3hr22a3t59ef';
+// const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaG9qZTE1diJ9.oFiVLuUXSv-KTdWearVyJ6qOVhmv9Bqg2wSIO__T0PQ`;
+// const apiKey = '3hr22a3t59ef';
 const user = 'geuni620';
 const theme = 'light';
 

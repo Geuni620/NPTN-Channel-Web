@@ -13,7 +13,6 @@ const Contacts = () => {
           <UserPlus />
         </div>
       </header>
-      {/* <ChannelSearch /> */}
     </div>
   );
 };
