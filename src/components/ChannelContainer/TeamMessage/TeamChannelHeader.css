@@ -5,6 +5,7 @@
   align-items: center;
   height: 72px;
   background: #ffffff;
+  z-index: 1;
 }
 
 .team-channel-header__channel-wrapper {
