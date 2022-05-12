@@ -10,6 +10,7 @@ import { SearchIcon } from '../../assets/SearchIcon';
 // import { TeamChannelPreview } from './TeamChannel/TeamChannelPreview';
 
 import PlusBox from '../../assets/PlusBox';
+import { ResultsDropdown } from '../ChannelSearch/ResultsDropdown';
 
 const customChannelTeamFilter = channels => {
   return channels.filter(channel => channel.type === 'team');
@@ -39,8 +40,6 @@ export const ChannelListContainer = props => {
           type="messaging"
         />
       </header>
-      <SearchIcon />
-
       {/* <ChannelList
         channelRenderFilterFn={customChannelTeamFilter}
         filters={filters[0]}
@@ -63,9 +62,6 @@ export const ChannelListContainer = props => {
       /> */}
       <ChannelList
         showChannelSearch
-        additionalChannelSearchProps={{
-          placeholder: `Search people, company, message`,
-        }}
         channelRenderFilterFn={customChannelMessagingFilter}
         filters={filters[1]}
         options={options}
@@ -78,7 +74,17 @@ export const ChannelListContainer = props => {
             type="messaging"
           />
         )}
-      />
+
+        // Preview={previewProps => (
+        //   <TeamChannelPreview
+        //     {...previewProps}
+        //     {...{ setIsCreating, setIsEditing }}
+        //     type="messaging"
+        //   />
+        // )}
+      >
+        <ResultsDropdown />
+      </ChannelList>
     </div>
   );
 };
