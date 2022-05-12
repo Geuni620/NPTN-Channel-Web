@@ -7,11 +7,6 @@ import { ChannelListContainer } from '../ChannelListContainer/ChannelListContain
 import { ChannelContainer } from '../ChannelContainer/ChannelContainer';
 import 'stream-chat-react/dist/css/index.css';
 
-import { getUserId, getGetstreamToken } from '../../utils';
-
-// const userToken = getGetstreamToken();
-// const user = getUserId();
-// const apiKey = '4qaxnhjezwsf';
 const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
 const apiKey = '3hr22a3t59ef';
 const user = 'geuni620';
@@ -25,12 +20,7 @@ const i18nInstance = new Streami18n({
   },
 });
 
-const filters = [
-  { type: 'team', demo: 'team' },
-  { type: 'messaging', demo: 'team' },
-];
-
-const options = { state: true, watch: true, presence: true, limit: 10 };
+const options = { state: true, watch: true, presence: true, limit: 8 };
 const sort = { last_message_at: -1, updated_at: -1 };
 
 const client = StreamChat.getInstance(apiKey, {
@@ -51,7 +41,6 @@ const ChatList = () => {
           className="chat-list"
           {...{
             isCreating,
-            filters,
             options,
             setCreateType,
             setIsCreating,

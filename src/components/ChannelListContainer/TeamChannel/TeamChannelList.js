@@ -1,17 +1,8 @@
 import React from 'react';
 import './TeamChannelList.css';
-import { SearchIcon } from '../../../assets/SearchIcon';
 
 const ChannelList = props => {
-  const {
-    children,
-    error = false,
-    loading,
-    setCreateType,
-    setIsCreating,
-    setIsEditing,
-    type,
-  } = props;
+  const { children, error = false, type } = props;
 
   if (error) {
     return type === 'team' ? (
@@ -22,23 +13,7 @@ const ChannelList = props => {
       </div>
     ) : null;
   }
-
-  if (loading) {
-    return (
-      <div className="team-channel-list">
-        <p className="team-channel-list__message loading">
-          {type === 'team' ? 'Channels' : 'Messages'} loading....
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="team-channel-list">
-      {/* <SearchIcon /> */}
-      {children}
-    </div>
-  );
+  return <div className="team-channel-list">{children}</div>;
 };
 
 export const TeamChannelList = React.memo(ChannelList);
