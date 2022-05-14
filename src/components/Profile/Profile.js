@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 
 import ProfileDashboard from './ProfileDashboard/ProfileDashboard';
+
 import { BsDot } from 'react-icons/bs';
 import './Profile.css';
 
@@ -14,9 +15,9 @@ const Profile = () => {
 
     if (window.confirm('로그아웃 하시겠습니까?')) {
       signOut(auth).then(() => {
+        localStorage.removeItem('getstreamToken');
         localStorage.removeItem('googleToken');
         localStorage.removeItem('userId');
-        localStorage.removeItem('userName');
 
         alert('로그아웃 되었습니다.');
         window.location.reload();
