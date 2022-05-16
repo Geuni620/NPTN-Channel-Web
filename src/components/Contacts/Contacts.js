@@ -4,12 +4,9 @@ import { useChatContext } from 'stream-chat-react';
 
 import _debounce from 'lodash.debounce';
 
-import Silders from '../../assets/Silders';
-import UserPlus from '../../assets/UserPlus';
 import './Contacts.css';
 import ContactsDashboard from './ContactsDashboard/ContactsDashboard';
-
-import { SearchIcon } from '../../assets/SearchIcon';
+import { UserPlus, SearchIcon, Silders } from '../../assets/Icons';
 import { BiUser } from 'react-icons/bi';
 import AddGroupModal from './AddGroupModal/AddGroupModal';
 

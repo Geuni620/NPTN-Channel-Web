@@ -34,7 +34,6 @@ export const ChannelContainer = props => {
     props;
 
   const { channel } = useChatContext();
-
   const [pinsOpen, setPinsOpen] = useState(false);
 
   if (isCreating) {

@@ -6,9 +6,7 @@ import {
   useChatContext,
 } from 'stream-chat-react';
 
-import { SearchIconDash } from '../../../assets/SearchIconDash';
-import { InfoIcon } from '../../../assets/InfoIcon';
-import { PhoneIcon } from '../../../assets/PhoneIcon';
+import { SearchIconDash, InfoIcon, PhoneIcon } from '../../../assets/Icons';
 import './TeamChannelHeader.css';
 
 export const TeamChannelHeader = ({ setIsEditing, setPinsOpen }) => {

@@ -1,26 +1,68 @@
 .team-message-input__wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: #f7f6f8;
-  padding: 15px 20px 28px;
   width: 100%;
+  height: 56px;
+  background: #ffffff;
 }
 
-.team-message-input__input {
+.team-message-input__button {
+  cursor: pointer;
+}
+
+.team-message-input__icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.team-message-input__icons > .list__icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 91px;
+  top: 17px;
+  margin: 0px 8px;
+}
+
+.team-message-input__icons > .team-message-input__icons--left {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  padding: 0px;
+  width: 58px;
+  height: 24px;
+
+  left: 16px;
+  right: 91px;
+  top: 17px;
+}
+
+.team-message-input__icons > .team-message-input__icons--left > .list__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.team-message-input__icons
+  > .team-message-input__icons--left
+  > .list__icon:first-child {
+  margin-right: 10px;
+}
+
+/* .team-message-input__input:focus-within .team-message-input__button path {
+  fill: var(--primary-color);
+  fill-opacity: 1;
+} */
+
+/* .team-message-input__wrapper.thread-open {
   position: absolute;
   height: 56px;
   left: 0px;
   right: 0px;
   bottom: 0px;
+
   background: #ffffff;
-}
+} */
 
 /*
-.team-message-input__wrapper.thread-open {
-  border-bottom-right-radius: 0px;
-}
-
 .team-message-input__input:focus-within {
   border-color: var(--primary-color);
 }
@@ -64,18 +106,6 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
-.team-message-input__button {
-  position: relative;
-  width: 0;
-  right: 32px;
-  cursor: pointer;
-}
-
-.team-message-input__input:focus-within .team-message-input__button path {
-  fill: var(--primary-color);
-  fill-opacity: 1;
-}
-
 .team-message-input__wrapper .str-chat__textarea textarea {
   display: flex;
   background: #fff;
@@ -100,38 +130,9 @@
   color: rgba(0, 0, 0, 0.2);
 }
 
-.team-message-input__icons {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.team-message-input__icons div:first-child {
-  margin: 0 5px;
-}
 
-.team-message-input__icons div:nth-child(3) {
-  margin-left: 5px;
-}
 
-.team-message-input__icons svg {
-  width: 36px;
-}
-
-.team-message-input__icons svg:hover path {
-  fill: var(--primary-color);
-  fill-opacity: 1;
-}
-
-.team-message-input__icons svg:hover {
-  cursor: pointer;
-}
-
-.icon-divider {
-  width: 1px;
-  height: 40px;
-  background: rgba(204, 204, 204, 0.5);
-}
 
 .team-message-input__wrapper .str-chat__input--emojipicker {
   z-index: 3;
