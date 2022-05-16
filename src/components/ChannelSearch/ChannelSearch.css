@@ -19,15 +19,6 @@
   justify-content: center;
 }
 
-.channel-search__input__text {
-  background: none;
-  border: none;
-  color: #fff;
-  font-family: Helvetica Neue, sans-serif;
-  font-size: 16px;
-  outline: none;
-}
-
 .channel-search__results {
   position: absolute;
   height: fit-content;
@@ -111,25 +102,23 @@
   color: #2c2c30;
 }
 
-/* 여기서부터 제작 */
 .channel-search__container {
   position: absolute;
-  display: flex;
-  justify-content: center;
   align-items: center;
   height: 40px;
   left: 16px;
   right: 16px;
   top: 72px;
+  padding: 10px 47px 10px 38px;
   border-radius: 3px;
   background: #f4f5f7;
 }
 
 .channel-search__input__text {
-  width: 210px;
+  position: absolute;
+  width: 220px;
   height: 20px;
-  border-radius: 3px;
-  background: #f4f5f7;
+  bottom: 8px;
   color: #7a869a;
   font-size: 13px;
   line-height: 20px;
@@ -140,10 +129,13 @@
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
+  transform: translateX(-10px);
 }
 
 .channel-search__container > .list__icon {
   position: absolute;
+  width: 24px;
+  height: 24px;
   left: 8px;
   top: calc(50% - 24px / 2);
 }

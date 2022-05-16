@@ -30,7 +30,6 @@ const App = () => {
         <Login setIsLogged={setIsLogged} />
       ) : (
         <>
-          {' '}
           <Nav />
           <ListContainer />
         </>

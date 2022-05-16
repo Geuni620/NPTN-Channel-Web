@@ -1,6 +1,11 @@
 import React from 'react';
 
-export const PlusBox = ({ setIsCreating, setIsEditing }) => {
+export const PlusBox = ({
+  setCreateType,
+  setIsCreating,
+  setIsEditing,
+  type,
+}) => {
   return (
     <div className="list__icon">
       <svg
@@ -10,6 +15,7 @@ export const PlusBox = ({ setIsCreating, setIsEditing }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         onClick={() => {
+          setCreateType(type);
           setIsCreating(prevState => !prevState);
           setIsEditing(false);
         }}

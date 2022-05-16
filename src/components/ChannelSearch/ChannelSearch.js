@@ -128,16 +128,14 @@ export const ChannelSearch = () => {
       />
       <SearchIcon />
 
-      {query && (
-        <ResultsDropdown
-          teamChannels={teamChannels}
-          directChannels={directChannels}
-          focusedId={focusedId}
-          loading={loading}
-          setChannel={setChannel}
-          setQuery={setQuery}
-        />
-      )}
+      <ResultsDropdown
+        teamChannels={teamChannels}
+        directChannels={directChannels}
+        focusedId={focusedId}
+        loading={loading}
+        setChannel={setChannel}
+        setQuery={setQuery}
+      />
     </div>
   );
 };
