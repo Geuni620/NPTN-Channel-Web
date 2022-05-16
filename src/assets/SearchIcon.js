@@ -2,7 +2,7 @@ import React from 'react';
 
 export const SearchIcon = () => {
   return (
-    <div className="list__icon">
+    <div className="list__icon search">
       <svg
         width="24"
         height="24"

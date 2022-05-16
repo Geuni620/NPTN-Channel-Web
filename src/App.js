@@ -7,6 +7,31 @@ import { getUserId, setGetstreamToken } from './utils';
 import 'stream-chat-react/dist/css/index.css';
 import './App.css';
 
+import { Chat, enTranslations, Streami18n } from 'stream-chat-react';
+
+// const userToken = getGetstreamToken();
+// const user = getUserId();
+// const apiKey = '4qaxnhjezwsf';
+
+const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
+const apiKey = '3hr22a3t59ef';
+const user = 'geuni620';
+
+const theme = 'light';
+
+const i18nInstance = new Streami18n({
+  language: 'en',
+  translationsForLanguage: {
+    ...enTranslations,
+  },
+});
+
+const client = StreamChat.getInstance(apiKey, {
+  enableInsights: true,
+  enableWSFallback: true,
+});
+client.connectUser({ id: user, name: user }, userToken);
+
 const App = () => {
   const userId = getUserId();
   const [isLogged, setIsLogged] = useState(false);
@@ -31,7 +56,9 @@ const App = () => {
       ) : (
         <>
           <Nav />
-          <ListContainer />
+          <Chat {...{ client, i18nInstance }} theme={`team ${theme}`}>
+            <ListContainer />
+          </Chat>
         </>
       )}
     </div>
