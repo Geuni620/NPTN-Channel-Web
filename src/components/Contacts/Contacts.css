@@ -38,13 +38,6 @@
   cursor: pointer;
 }
 
-.contacts__icons > .list__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 6px;
-}
-
 .contacts__input {
   display: flex;
   flex-direction: row;
@@ -63,8 +56,8 @@
 
 header > .search {
   position: absolute;
-  left: 23px;
-  bottom: -17px;
+  bottom: -36px;
+  left: 24px;
   color: #1b1b1b;
 }
 
