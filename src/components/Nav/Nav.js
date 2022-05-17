@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../service/firebase';
 import { getUserId } from '../../utils';
 
 import {
@@ -11,10 +12,10 @@ import {
   Folder,
   Settings,
 } from '../../assets/Icons';
-
 import './Nav.css';
 
 const Nav = () => {
+  const [images, setImages] = useState([]);
   const dispatch = useDispatch();
   const [idCheck, setIdCheck] = useState('');
   const handleIdRead = id => {
@@ -26,6 +27,16 @@ const Nav = () => {
     if (pageName === 'Chats') dispatch({ type: 'chatList' });
     else if (pageName === 'Contacts') dispatch({ type: 'contacts' });
   };
+
+  useEffect(() => {
+    const getAvatar = async () => {
+      const userInfo = await getDoc(doc(db, 'users', getUserId()));
+      const { images } = userInfo.data();
+      setImages(prev => (prev = JSON.parse(images)));
+    };
+
+    getAvatar();
+  }, [images]);
 
   return (
     <div className="nav">
@@ -44,9 +55,11 @@ const Nav = () => {
             >
               {icon}
               <span className={nav4th ? 'hidden' : 'nav__label'}>{name}</span>
+
+              {/* Fix: 추후 count 기능 구현시 사용
               <span className={nav4th ? 'nav__divider' : 'nav__num'}>
-                {nav4th ? '' : count}
-              </span>
+                {nav4th ? '' : ""}
+              </span> */}
             </li>
           );
         })}
@@ -58,7 +71,7 @@ const Nav = () => {
         }}
       >
         <div className="nav__avatar--image">
-          {/* 이미지 넣을 것 */}
+          <img className="avatar__img" src={images[1]?.dataURL} alt="avatar" />
           <div className="nav__avatar--active" />
         </div>
         <div className="nav__avatar--name">{getUserId()}</div>
