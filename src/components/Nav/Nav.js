@@ -36,12 +36,12 @@ const Nav = () => {
     };
 
     getAvatar();
-  }, [images]);
+  }, []);
 
   return (
     <div className="nav">
       <ul className="nav__items">
-        {NAV_DATA.map(({ id, icon, name, count }) => {
+        {NAV_DATA.map(({ id, icon, name }) => {
           const nav4th = id === 4;
           return (
             <li

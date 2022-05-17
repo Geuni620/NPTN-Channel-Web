@@ -67,3 +67,7 @@
 .btn__chat {
   right: 32px;
 }
+
+.channelContainer > .channel__container {
+  left: 0px;
+}
