@@ -3,12 +3,15 @@ import { useDispatch } from 'react-redux';
 
 import { getUserId } from '../../utils';
 
-import Cube from '../../assets/Cube';
-import Anchor from '../../assets/Anchor';
-import Arrow from '../../assets/Arrow';
-import People from '../../assets/People';
-import Folder from '../../assets/Folder';
-import Setting from '../../assets/Setting';
+import {
+  Cube,
+  Anchor,
+  Arrow,
+  People,
+  Folder,
+  Settings,
+} from '../../assets/Icons';
+
 import './Nav.css';
 
 const Nav = () => {
@@ -113,7 +116,7 @@ const NAV_DATA = [
   },
   {
     id: 8,
-    icon: <Setting />,
+    icon: <Settings />,
     name: 'Settings',
     count: 20,
   },

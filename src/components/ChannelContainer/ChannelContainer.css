@@ -16,6 +16,43 @@
   background: #ffffff;
 }
 
+.rta.str-chat__textarea textarea {
+  position: absolute;
+  left: 86px;
+  top: 8px;
+  width: 80%;
+  padding: 10px 0px 10px 8px;
+  background: #f4f5f7;
+  border: none;
+  border-radius: 3px;
+}
+
+.rta.str-chat__textarea textarea::placeholder {
+  color: #7a869a;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.vector {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  z-index: 1;
+  transform: translateX(-40px);
+}
+
+.vector > svg {
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  background: #242424;
+  border-radius: 4px;
+}
+
+/*
 .unpinned-message {
   display: flex;
   flex-direction: row;
@@ -119,3 +156,4 @@
   z-index: 100;
   border-radius: 4px;
 }
+*/

@@ -12,8 +12,9 @@ import {
 import './TeamMessageInput.css';
 
 import { TeamTypingIndicator } from '../../ChannelListContainer/TeamChannel/TeamTypingIndicator';
-
 import { GiphyContext } from '../Channel/ChannelInner';
+
+import { Vector, PaperClip, Camera, EmojiIcon } from '../../../assets/Icons';
 
 export const TeamMessageInput = props => {
   const { pinsOpen } = props;
@@ -148,26 +149,16 @@ export const TeamMessageInput = props => {
               aria-roledescription="button"
               onClick={messageInput.handleSubmit}
             >
-              {/* <SendButton /> */}
+              <Vector />
             </div>
           </div>
           <div className="team-message-input__bottom">
             <div className="team-message-input__icons">
-              {/* <SmileyFace openEmojiPicker={messageInput.openEmojiPicker} /> */}
-              {/* <LightningBolt {...{ giphyState, onCommandClick }} /> */}
-              <div className="icon-divider" />
-              {/* <BoldIcon {...{ boldState, resetIconState, setBoldState }} />
-            <ItalicsIcon
-              {...{ italicState, resetIconState, setItalicState }}
-            />
-            <StrikeThroughIcon
-              {...{
-                resetIconState,
-                strikeThroughState,
-                setStrikeThroughState,
-              }}
-            />
-            <CodeSnippet {...{ codeState, resetIconState, setCodeState }} /> */}
+              <EmojiIcon openEmojiPicker={messageInput.openEmojiPicker} />
+              <div className="team-message-input__icons--left">
+                <Camera />
+                <PaperClip />
+              </div>
             </div>
           </div>
         </div>
