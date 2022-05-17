@@ -32,7 +32,9 @@ const Nav = () => {
     const getAvatar = async () => {
       const userInfo = await getDoc(doc(db, 'users', getUserId()));
       const { images } = userInfo.data();
-      setImages(prev => (prev = JSON.parse(images)));
+      if (images) {
+        setImages(prev => (prev = JSON.parse(images)));
+      }
     };
 
     getAvatar();
@@ -55,11 +57,9 @@ const Nav = () => {
             >
               {icon}
               <span className={nav4th ? 'hidden' : 'nav__label'}>{name}</span>
-
-              {/* Fix: 추후 count 기능 구현시 사용
               <span className={nav4th ? 'nav__divider' : 'nav__num'}>
-                {nav4th ? '' : ""}
-              </span> */}
+                {nav4th ? '' : ''}
+              </span>
             </li>
           );
         })}

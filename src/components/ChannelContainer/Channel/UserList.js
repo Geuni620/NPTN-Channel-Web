@@ -3,25 +3,27 @@ import { Avatar, useChatContext } from 'stream-chat-react';
 
 import './UserList.css';
 
-import { InviteIcon } from '../../../assets/Chats';
+import { CheckBoxIconActive, CheckBoxIconEmpty } from '../../../assets/Icons';
 
 const ListContainer = props => {
   const { children } = props;
-
   return (
     <div className="user-list__container">
-      <div className="user-list__header">
-        <p>User</p>
-        <p>Last Active</p>
-        <p>Invite</p>
-      </div>
-      {children}
+      <div className="user-list__items">{children}</div>
     </div>
   );
 };
 
 const UserItem = props => {
-  const { index, setSelectedUsers, user } = props;
+  const {
+    index,
+    setSelectedUsers,
+    user,
+    setSelectedListUsers,
+    setSelectedUsersInfo,
+    selectedUsersInfo,
+    selectedListUsers,
+  } = props;
 
   const [selected, setSelected] = useState(false);
 
@@ -42,31 +44,55 @@ const UserItem = props => {
     }
   };
 
-  const handleClick = () => {
+  const handleUsersInfo = () => {
+    selectedUsersInfo?.includes(user)
+      ? setSelectedUsersInfo(
+          prev => (prev = prev.filter(item => item.id !== user.id))
+        )
+      : setSelectedUsersInfo(prev => [...prev, user]);
+  };
+
+  const handleClick = e => {
     if (selected) {
       setSelectedUsers(prevUsers =>
         prevUsers.filter(prevUser => prevUser !== user.id)
       );
+
+      setSelectedListUsers(prevUsers =>
+        prevUsers.filter(prevUser => prevUser !== user.id)
+      );
     } else {
       setSelectedUsers(prevUsers => [...prevUsers, user.id]);
+      setSelectedListUsers(prevUsers => [...prevUsers, user.id]);
     }
     setSelected(!selected);
+
+    handleUsersInfo();
   };
 
   return (
     <div className="user-item__wrapper" onClick={handleClick}>
+      {selected ? <CheckBoxIconActive /> : <CheckBoxIconEmpty />}
       <div className="user-item__name-wrapper">
-        <Avatar image={user.image} name={user.name || user.id} size={32} />
-        <p className="user-item__name">{user.name || user.id}</p>
+        <Avatar image={user.image} name={user.name || user.id} size={40} />
+        <div className="user-item__info">
+          <p className="user-item__name">{user.name || user.id}</p>
+          <p className="user-item__last-active">{getLastActive(index)}</p>
+        </div>
       </div>
-      <p className="user-item__last-active">{getLastActive(index)}</p>
-      {selected ? <InviteIcon /> : <div className="user-item__invite-empty" />}
     </div>
   );
 };
 
 export const UserList = props => {
-  const { filters, setSelectedUsers } = props;
+  const {
+    filters,
+    setSelectedUsers,
+    selectedListUsers,
+    setSelectedListUsers,
+    setSelectedUsersInfo,
+    selectedUsersInfo,
+  } = props;
 
   const { client } = useChatContext();
 
@@ -131,7 +157,14 @@ export const UserList = props => {
             index={i}
             key={user.id}
             setSelectedUsers={setSelectedUsers}
+            selectedListUsers={selectedListUsers}
             user={user}
+            {...{
+              selectedListUsers,
+              setSelectedListUsers,
+              setSelectedUsersInfo,
+              selectedUsersInfo,
+            }}
           />
         ))
       )}

@@ -50,7 +50,6 @@
   padding: 0px;
 
   position: absolute;
-  width: 292px;
   height: 40px;
   left: 20px;
   top: calc(50% - 40px / 2);
@@ -95,10 +94,4 @@
   color: #858688;
   font-family: Helvetica Neue, sans-serif;
   font-size: 14px;
-}
-
-.str-chat__avatar--circle,
-.str-chat__avatar-image {
-  width: 40px important!;
-  height: 40px important!;
 }

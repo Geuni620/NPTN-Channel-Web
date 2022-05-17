@@ -2,8 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { ChannelList } from 'stream-chat-react';
 import { TeamChannelList } from './TeamChannel/TeamChannelList';
 import debounce from 'lodash.debounce';
-import { PlusBox } from '../../assets/Icons';
-import { SearchIcon } from '../../assets/Icons';
+import { PlusBox, SearchIcon } from '../../assets/Icons';
+import { TeamChannelPreview } from '../ChannelListContainer/TeamChannel/TeamChannelPreview';
 import './ChannelListContainer.css';
 import '../ChannelSearch/ChannelSearch.css';
 
@@ -59,6 +59,13 @@ export const ChannelListContainer = props => {
           List={listProps => (
             <TeamChannelList {...listProps} type="messaging" />
           )}
+          Preview={previewProps => (
+            <TeamChannelPreview
+              {...previewProps}
+              {...{ setIsCreating, setIsEditing }}
+              type="messaging"
+            />
+          )}
         />
       ) : (
         <ChannelList
@@ -69,6 +76,13 @@ export const ChannelListContainer = props => {
           sort={sort}
           List={listProps => (
             <TeamChannelList {...listProps} type="messaging" />
+          )}
+          Preview={previewProps => (
+            <TeamChannelPreview
+              {...previewProps}
+              {...{ setIsCreating, setIsEditing }}
+              type="messaging"
+            />
           )}
         />
       )}

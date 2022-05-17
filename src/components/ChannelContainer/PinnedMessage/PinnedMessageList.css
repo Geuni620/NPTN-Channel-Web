@@ -1,4 +1,4 @@
-.pinned-messages__container {
+/* .pinned-messages__container {
   height: 100%;
   width: 300px;
   box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
@@ -32,22 +32,6 @@
   margin-left: 0.5px;
 }
 
-.pinned-messages__list .str-chat__message-simple__actions {
-  display: none;
-}
-
-.pinned-messages__list .str-chat__message-team-pin-indicator {
-  display: none;
-}
-
-.pinned-messages__list .str-chat__message-replies-count-button {
-  display: none;
-}
-
-.pinned-messages__list .str-chat__message-team .str-chat__message-team-actions {
-  display: none;
-}
-
 div.pinned-messages__header > button {
   background: #fff;
   margin: 0;
@@ -56,8 +40,28 @@ div.pinned-messages__header > button {
   height: 35px;
   width: 35px;
   border-radius: 18px;
+} */
+
+.str-chat__message-simple__actions__action {
+  /* 이거 풀 시 hover 기능 삭제 됨 */
+  /* display: flex;  */
+  position: absolute;
+  width: 20px;
+  top: 5px;
 }
 
-div.pinned-messages__header > button:active {
-  background: #fff;
+/* 정적인 상태 */
+/* 스마일 기호 삭제 */
+.str-chat__message-simple__actions__action--reactions {
+  display: none !important;
+}
+
+/* 공유 버튼 삭제 */
+.str-chat__message-simple__actions__action--thread {
+  display: none !important;
+}
+
+/* pin 삭제 */
+.str-chat__message-actions-list-item:first-child {
+  display: none !important;
 }

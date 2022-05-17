@@ -6,6 +6,7 @@ import { IoCallOutline } from 'react-icons/io5';
 import { BsChatLeft } from 'react-icons/bs';
 
 import ChannelContainer from '../../ChannelContainer/ChannelContainer';
+import { getUserId } from '../../../utils';
 
 const ContactsDashboard = ({ user, setIsChannelShowed, isChannelShowed }) => {
   const { image, id } = user;
@@ -15,7 +16,7 @@ const ContactsDashboard = ({ user, setIsChannelShowed, isChannelShowed }) => {
 
   const showChannel = async () => {
     const channel = client.channel('messaging', {
-      members: ['hyodduru', id],
+      members: ['geuni620', id],
     });
 
     await channel.watch();

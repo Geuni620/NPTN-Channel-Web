@@ -5,6 +5,7 @@
   top: 0px;
   bottom: 0px;
   background: #f4f5f7;
+  border-left: 1px solid #ebecf0;
 }
 
 .team-channel-header__container {
@@ -14,17 +15,6 @@
   right: 0px;
   top: 0px;
   background: #ffffff;
-}
-
-.rta.str-chat__textarea textarea {
-  position: absolute;
-  left: 86px;
-  top: 8px;
-  width: 80%;
-  padding: 10px 0px 10px 8px;
-  background: #f4f5f7;
-  border: none;
-  border-radius: 3px;
 }
 
 .rta.str-chat__textarea textarea::placeholder {
@@ -52,21 +42,15 @@
   border-radius: 4px;
 }
 
-/*
 .unpinned-message {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   text-align: right;
   padding: 8px 12px;
   margin: 10px 50px;
-  gap: 10px;
   width: 320px;
   background: #ffffff;
   border-radius: 0px 16px 16px 16px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .str-chat__avatar .str-chat__avatar--circle {
@@ -75,9 +59,6 @@
   width: 24px;
   height: 24px;
   border-radius: 64px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .str-chat__ul {
@@ -87,32 +68,24 @@
 
 .str-chat__message-text-inner.str-chat__message-simple-text-inner {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   text-align: right;
   padding: 8px 12px;
-  gap: 10px;
   background: #ffffff;
   border-radius: 0px 16px 16px 16px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .str-chat__message--me
   .str-chat__message-text-inner.str-chat__message-simple-text-inner {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
   padding: 8px 12px;
   gap: 10px;
   background: #dfe1e6;
   border-radius: 16px 0px 16px 16px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
+
 .str-chat__message--me .str-chat__message-simple-timestamp {
   font-family: 'Pretendard';
   font-style: normal;
@@ -133,27 +106,11 @@
 .team-message-input__top {
   width: 720px;
 }
-.rta.str-chat__textarea textarea {
-  padding: 8px;
-  gap: 173px;
-  height: 40px;
-  width: 75%;
-  margin: auto;
-  background: #f4f5f7;
-  border-radius: 3px;
-}
 
-.vector {
-  display: flex;
-  position: absolute;
-  right: 45px;
-  bottom: 38px;
-  justify-content: center;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-  background: black;
-  z-index: 100;
-  border-radius: 4px;
+.str-chat__message-simple-text-inner p {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #091e42 !important;
 }
-*/
