@@ -1,0 +1,22 @@
+.user-list__items--selected {
+  position: absolute;
+  width: 45%;
+  top: 0;
+  right: 0;
+  padding: 32px 16px 0px 16px;
+}
+
+.user-item__name-wrapper-selected {
+  width: 100%;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
+  cursor: pointer;
+}
+
+.user-item__name-wrapper-selected {
+  display: flex;
+  align-items: center;
+}

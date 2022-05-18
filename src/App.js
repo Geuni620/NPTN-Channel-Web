@@ -13,13 +13,13 @@ import { Chat, enTranslations, Streami18n } from 'stream-chat-react';
 // const user = getUserId();
 // const apiKey = '4qaxnhjezwsf';
 
-// const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
+const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
 const apiKey = '3hr22a3t59ef';
-// const user = 'geuni620';
+const user = 'geuni620';
 
-const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaHlvZGR1cnUifQ.kFj-vrP-WDohgVgt3531T0OsMfoDQZ9esqjivRATf1w';
-const user = 'hyodduru';
+// const userToken =
+//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaHlvZGR1cnUifQ.kFj-vrP-WDohgVgt3531T0OsMfoDQZ9esqjivRATf1w';
+// const user = 'hyodduru';
 
 const theme = 'light';
 

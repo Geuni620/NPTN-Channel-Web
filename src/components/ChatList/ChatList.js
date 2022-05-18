@@ -9,7 +9,7 @@ const filters = [
   { type: 'messaging', demo: 'team' },
 ];
 
-const options = { state: true, watch: true, presence: true, limit: 7 };
+const options = { state: true, watch: true, presence: true, limit: 100 };
 const sort = { last_message_at: -1, updated_at: -1 };
 
 const ChatList = () => {

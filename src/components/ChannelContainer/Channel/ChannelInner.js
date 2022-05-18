@@ -8,6 +8,7 @@ import {
   Thread,
   Window,
   useChannelActionContext,
+  useChannelStateContext,
 } from 'stream-chat-react';
 
 import { PinnedMessageList } from '../PinnedMessage/PinnedMessageList';

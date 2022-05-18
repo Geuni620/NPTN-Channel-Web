@@ -78,6 +78,7 @@
   text-align: start;
 }
 
+/* FIX : 추후 사용할 수 있을 것 같아서 남겨놓기  */
 .nav__num {
   position: absolute;
   display: flex;
@@ -90,6 +91,7 @@
   padding: 0px 5px;
   background: #ffffff;
   border-radius: 8px;
+  display: none;
 }
 
 .nav__text {

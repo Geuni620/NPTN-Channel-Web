@@ -1,13 +1,21 @@
 .channel-preview__wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 320px;
   height: 64px;
-  left: 0px;
-  top: 64px;
   padding: 12px 16px;
   background: #ffffff;
+  cursor: pointer;
+}
+
+.channel-preview__item--single,
+.channel-preview__item--multi {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0px;
+  width: 288px;
+  height: 40px;
 }
 
 .channel-preview__wrapper__selected {
@@ -15,63 +23,65 @@
   align-items: flex-start;
   width: 320px;
   height: 64px;
-  left: 0px;
-  top: 0px;
   padding: 12px 16px;
-  background: #dfe1e6;
-}
-
-.channel-preview__wrapper:hover {
   background: #dfe1e6;
   cursor: pointer;
 }
 
-.channel-preview__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 288px;
-  height: 40px;
-  left: 16px;
-  top: 12px;
-}
-
-.channel-preview__item.single .str-chat__avatar {
+.channel-preview__item--Avatar {
+  position: relative;
   width: 40px;
   height: 40px;
-  left: 0px;
-  top: 0px;
-  border-radius: 64px;
-  margin: 0px 10px;
+  bottom: -4px;
 }
 
-/*
-.channel-preview__item.multi {
-  max-width: 220px;
+.channel-preview__item--Avatar > .str-chat__avatar:first-child {
+  z-index: 100 !important;
+  position: absolute;
 }
 
-
-.channel-preview__item.multi .str-chat__avatar {
-  margin-right: 0;
+.channel-preview__item--Avatar > .str-chat__avatar:last-child {
+  position: absolute;
+  bottom: 10px;
+  left: 11px;
 }
 
-
-.channel-preview__item.multi span:first-child {
-  position: relative;
-  z-index: 2;
-  bottom: 6px;
+.channel-preview__item--id {
+  width: 200px;
+  height: 16px;
+  margin-bottom: 4px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: start;
+  color: #1b1b1b;
 }
 
-.channel-preview__item.multi div:nth-child(2) {
-  position: relative;
-  right: 10px;
-  z-index: 1;
-  margin-bottom: 0px;
+.channel-preview__item--content {
+  width: 193px;
+  height: 16px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: start;
+  color: #5e5e5e;
 }
 
-.channel-preview__item.multi p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.channel-preview__item--textSingle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  width: 238px;
+  height: 37px;
 }
-*/
+.channel-preview__item--AvatarSingle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
