@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useChatContext } from 'stream-chat-react';
 import ProfileEdiltModal from '../ProfileEditModal/ProfileEdiltModal';
 import { getUserId } from '../../../utils';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../../service/firebase';
-
 import ImageUploading from 'react-images-uploading';
-
 import './ProfileDashboard.css';
 import { Success } from '../../../assets/Icons';
 import { AiOutlineEdit } from 'react-icons/ai';
@@ -17,6 +16,7 @@ const ProfileDashboard = () => {
   const [isModalShowed, setIsModalShowed] = useState(false);
   const [isSuccessShowed, setIsSuccessShowed] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const { client } = useChatContext();
 
   useEffect(() => {
     const getAvatar = async () => {
@@ -45,10 +45,22 @@ const ProfileDashboard = () => {
     sendImages(imageList);
   };
 
+  //send to firebase
   const sendImages = imageList => {
     updateDoc(doc(db, 'users', getUserId()), {
       images: JSON.stringify(imageList),
     });
+
+    const updateUserImage = async () => {
+      await client.upsertUser({
+        id: 'hyodduru',
+        image: imageList[1]?.dataURL,
+      });
+    };
+
+    updateUserImage();
+
+    localStorage.setItem('avatar', imageList[1]?.dataURL);
   };
 
   return (

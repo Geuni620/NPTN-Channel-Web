@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
-import { useChatContext } from 'stream-chat-react';
+import { useChatContext, Avatar } from 'stream-chat-react';
 
 import _debounce from 'lodash.debounce';
 
@@ -8,47 +8,86 @@ import './Contacts.css';
 import ContactsDashboard from './ContactsDashboard/ContactsDashboard';
 import { UserPlus, SearchIcon, Silders } from '../../assets/Icons';
 import { BiUser } from 'react-icons/bi';
-import AddGroupModal from './AddGroupModal/AddGroupModal';
+import { Success } from '../../assets/Icons';
+import AddContactModal from './AddContactModal/AddContactModal';
+import { getDoc, doc } from '@firebase/firestore';
+import { db } from '../../service/firebase';
+import { getUserId } from '../../utils';
 
 const Contacts = () => {
   const { client } = useChatContext();
   const [contacts, setContacts] = useState([]);
   const [selectedContact, setSelectedContact] = useState({});
   const [query, setQuery] = useState('');
-  const [isAddGroupModalShowed, setIsAddGroupModalShowed] = useState(false);
+  const [isAddContactModalShowed, setIsAddContactModalShowed] = useState(false);
+  const [isSuccessShowed, setIsSuccessShowed] = useState(false);
+  const [isChannelShowed, setIsChannelShowed] = useState(false);
+
+  const showSuccessMsg = () => {
+    setIsSuccessShowed(true);
+
+    setTimeout(() => setIsSuccessShowed(false), 3000);
+  };
+
+  const getContactList = useCallback(async () => {
+    if (query !== '') return;
+    // get list from firestore
+    const userInfo = await getDoc(doc(db, 'users', getUserId()));
+
+    const { friend_list } = userInfo.data();
+
+    // get list from getstream
+    const response = await client.queryUsers({
+      id: { $in: friend_list },
+    });
+    setContacts(response.users);
+  }, [client, query]);
 
   useEffect(() => {
-    const getContacts = async () => {
-      const response =
-        query === ''
-          ? await client.queryUsers({
-              id: { $ne: client.userID },
-            })
-          : await client.queryUsers({ id: { $autocomplete: query } });
+    getContactList();
+  }, [getContactList]);
+
+  useEffect(() => {
+    const searchContacts = async () => {
+      if (query === '') return;
+      const response = await client.queryUsers({
+        id: { $autocomplete: query },
+      });
 
       setContacts(response.users);
     };
 
-    const getContactsDebounce = _debounce(getContacts, 2000, {
+    const searchContactsDebounce = _debounce(searchContacts, 2000, {
       trailing: true,
     });
 
-    getContactsDebounce();
+    searchContactsDebounce();
   }, [client, query]);
 
   const showAddgroupModal = () => {
-    setIsAddGroupModalShowed(true);
+    setIsAddContactModalShowed(true);
+  };
+
+  const closeChannel = () => {
+    setIsChannelShowed(false);
   };
 
   return (
     <div className="contacts">
-      {isAddGroupModalShowed && (
-        <AddGroupModal
-          setIsAddGroupModalShowed={setIsAddGroupModalShowed}
+      {isAddContactModalShowed && (
+        <AddContactModal
+          setIsAddContactModalShowed={setIsAddContactModalShowed}
           client={client}
+          setContacts={setContacts}
+          showSuccessMsg={showSuccessMsg}
         />
       )}
-      <div className="contactList">
+      <div className={isSuccessShowed ? 'success__msg show' : 'success__msg'}>
+        <Success />
+        <span>A new contact has been added successfully.</span>
+      </div>
+
+      <div className="contactList" onClick={closeChannel}>
         <header className="contacts__header">
           <span className="contacts__title">Contacts</span>
           <div className="contacts__icons">
@@ -80,9 +119,10 @@ const Contacts = () => {
               >
                 <div className="contact__profile">
                   {contact.image ? (
-                    <img
+                    <Avatar
                       className="contact__avatar"
-                      src={contact.image}
+                      image={contact.image}
+                      size={40}
                       alt="profile"
                     />
                   ) : (
@@ -109,7 +149,11 @@ const Contacts = () => {
           </div>
         )}
       </div>
-      <ContactsDashboard user={selectedContact} />
+      <ContactsDashboard
+        user={selectedContact}
+        setIsChannelShowed={setIsChannelShowed}
+        isChannelShowed={isChannelShowed}
+      />
     </div>
   );
 };

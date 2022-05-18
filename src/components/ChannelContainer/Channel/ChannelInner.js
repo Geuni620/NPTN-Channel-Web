@@ -17,7 +17,7 @@ import { TeamChannelHeader } from '../TeamMessage/TeamChannelHeader';
 export const GiphyContext = React.createContext({});
 
 export const ChannelInner = props => {
-  const { pinsOpen, setIsEditing, setPinsOpen } = props;
+  const { pinsOpen, setIsEditing, setPinsOpen, selectedChannel } = props;
 
   const [giphyState, setGiphyState] = useState(false);
 
@@ -77,7 +77,12 @@ export const ChannelInner = props => {
             Input: ThreadMessageInput,
           }}
         />
-        {pinsOpen && <PinnedMessageList setPinsOpen={setPinsOpen} />}
+        {pinsOpen && (
+          <PinnedMessageList
+            setPinsOpen={setPinsOpen}
+            selectedChannel={selectedChannel}
+          />
+        )}
       </div>
     </GiphyContext.Provider>
   );
