@@ -41,6 +41,7 @@ const Login = ({ setIsLogged }) => {
       });
   };
 
+  // handling kakao login
   // const sendCodeToFirebase = async () => {
   //   const accessCode = new URLSearchParams(search).get('code');
   //   const res = await fetch(

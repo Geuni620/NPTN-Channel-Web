@@ -8,18 +8,11 @@ import { TeamMessageInput } from './TeamMessage/TeamMessageInput';
 import './ChannelContainer.css';
 
 export const ChannelContainer = props => {
-  const {
-    createType,
-    isCreating,
-    isEditing,
-    setIsCreating,
-    setIsEditing,
-    contactChannel,
-  } = props;
+  const { createType, isCreating, isEditing, setIsCreating, setIsEditing } =
+    props;
 
   const { channel } = useChatContext();
 
-  const selectedChannel = contactChannel || channel;
   const [pinsOpen, setPinsOpen] = useState(false);
 
   if (isCreating) {
@@ -35,8 +28,8 @@ export const ChannelContainer = props => {
   if (isEditing) {
     const filters = {};
 
-    if (selectedChannel?.state?.members) {
-      const channelMembers = Object.keys(selectedChannel.state.members);
+    if (channel?.state?.members) {
+      const channelMembers = Object.keys(channel.state.members);
       if (channelMembers.length) {
         filters.id = { $nin: channelMembers };
       }
@@ -57,7 +50,7 @@ export const ChannelContainer = props => {
             pinsOpen,
             setIsEditing,
             setPinsOpen,
-            selectedChannel,
+            channel,
           }}
         />
       </Channel>

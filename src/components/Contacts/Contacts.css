@@ -79,12 +79,18 @@ header > .search {
   cursor: default;
 }
 
-.contacts__list {
+.contacts__list,
+.no__contactList {
   position: absolute;
   top: 180px;
   display: flex;
   flex-direction: column;
   width: 320px;
+}
+
+.no__contactList div,
+.no__contactList p {
+  text-align: center;
 }
 
 .contact__item {

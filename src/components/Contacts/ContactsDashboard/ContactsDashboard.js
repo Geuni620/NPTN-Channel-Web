@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import { useChatContext, Avatar } from 'stream-chat-react';
-import './ContactsDashboard.css';
+import {
+  useChatContext,
+  Avatar,
+  Channel,
+  MessageList,
+  MessageInput,
+  Chat,
+} from 'stream-chat-react';
+
 import { FaUserAlt } from 'react-icons/fa';
 import { IoCallOutline } from 'react-icons/io5';
 import { BsChatLeft } from 'react-icons/bs';
-
-import ChannelContainer from '../../ChannelContainer/ChannelContainer';
-import { getUserId } from '../../../utils';
+import './ContactsDashboard.css';
 
 const ContactsDashboard = ({ user, setIsChannelShowed, isChannelShowed }) => {
   const { image, id } = user;
@@ -16,7 +21,7 @@ const ContactsDashboard = ({ user, setIsChannelShowed, isChannelShowed }) => {
 
   const showChannel = async () => {
     const channel = client.channel('messaging', {
-      members: ['geuni620', id],
+      members: ['hyodduru', id],
     });
 
     await channel.watch();
@@ -39,7 +44,7 @@ const ContactsDashboard = ({ user, setIsChannelShowed, isChannelShowed }) => {
             {image ? (
               <Avatar
                 className="avatar__img"
-                src={image}
+                image={image}
                 size={125.6}
                 alt="avatar"
               />
@@ -73,7 +78,14 @@ const ContactsDashboard = ({ user, setIsChannelShowed, isChannelShowed }) => {
       )}
       {isChannelShowed && (
         <div className="channelContainer">
-          <ChannelContainer contactChannel={contactChannel && contactChannel} />
+          <Chat client={client}>
+            <Channel channel={contactChannel && contactChannel}>
+              <div className="container">
+                <MessageList />
+                <MessageInput />
+              </div>
+            </Channel>
+          </Chat>
         </div>
       )}
     </div>

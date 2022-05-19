@@ -33,7 +33,6 @@ export const ThreadMessageInput = props => {
 
   const GiphyIcon = () => (
     <div className="giphy-icon__wrapper">
-      {/* <LightningBoltSmall /> */}
       <p className="giphy-icon__text">GIPHY</p>
     </div>
   );
@@ -48,9 +47,7 @@ export const ThreadMessageInput = props => {
           role="button"
           aria-roledescription="button"
           onClick={messageInput.handleSubmit}
-        >
-          {/* <SendButton /> */}
-        </div>
+        />
       </div>
       <EmojiPicker />
     </div>
