@@ -22,7 +22,6 @@ const UserItem = props => {
     setSelectedListUsers,
     setSelectedUsersInfo,
     selectedUsersInfo,
-    selectedListUsers,
   } = props;
 
   const [selected, setSelected] = useState(false);

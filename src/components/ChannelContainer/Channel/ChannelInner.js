@@ -8,17 +8,16 @@ import {
   Thread,
   Window,
   useChannelActionContext,
-  useChannelStateContext,
 } from 'stream-chat-react';
 
-import { PinnedMessageList } from '../PinnedMessage/PinnedMessageList';
+import '../PinnedMessage/PinnedMessageList.css';
 import { ThreadMessageInput } from '../TeamMessage/ThreadMessageInput';
 import { TeamChannelHeader } from '../TeamMessage/TeamChannelHeader';
 
 export const GiphyContext = React.createContext({});
 
 export const ChannelInner = props => {
-  const { pinsOpen, setIsEditing, setPinsOpen, selectedChannel } = props;
+  const { setIsEditing, setPinsOpen } = props;
 
   const [giphyState, setGiphyState] = useState(false);
 
@@ -78,12 +77,6 @@ export const ChannelInner = props => {
             Input: ThreadMessageInput,
           }}
         />
-        {pinsOpen && (
-          <PinnedMessageList
-            setPinsOpen={setPinsOpen}
-            selectedChannel={selectedChannel}
-          />
-        )}
       </div>
     </GiphyContext.Provider>
   );

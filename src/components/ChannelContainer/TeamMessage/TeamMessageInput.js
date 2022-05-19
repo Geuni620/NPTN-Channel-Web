@@ -1,12 +1,12 @@
 import React, { useCallback, useContext, useState } from 'react';
 import { ImageDropzone } from 'react-file-utils';
 import {
-  ChatAutoComplete,
-  EmojiPicker,
   UploadsPreview,
   useChannelStateContext,
   useChatContext,
   useMessageInputContext,
+  ChatAutoComplete,
+  EmojiPicker,
 } from 'stream-chat-react';
 
 import './TeamMessageInput.css';
@@ -28,13 +28,6 @@ export const TeamMessageInput = props => {
   const [codeState, setCodeState] = useState(false);
   const [italicState, setItalicState] = useState(false);
   const [strikeThroughState, setStrikeThroughState] = useState(false);
-
-  const resetIconState = () => {
-    setBoldState(false);
-    setCodeState(false);
-    setItalicState(false);
-    setStrikeThroughState(false);
-  };
 
   const getPlaceholder = () => {
     if (channel.type === 'team') {
@@ -114,7 +107,6 @@ export const TeamMessageInput = props => {
 
   const GiphyIcon = () => (
     <div className="giphy-icon__wrapper">
-      {/* <LightningBoltSmall /> */}
       <p className="giphy-icon__text">GIPHY</p>
     </div>
   );
@@ -162,9 +154,9 @@ export const TeamMessageInput = props => {
             </div>
           </div>
         </div>
+        <EmojiPicker />
       </ImageDropzone>
       <TeamTypingIndicator type="input" />
-      <EmojiPicker />
     </div>
   );
 };

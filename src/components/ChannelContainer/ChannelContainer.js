@@ -20,9 +20,6 @@ export const ChannelContainer = props => {
   const { channel } = useChatContext();
 
   const selectedChannel = contactChannel || channel;
-
-  // console.log(selectedChannel?.state.members, channel?.state.members);
-
   const [pinsOpen, setPinsOpen] = useState(false);
 
   if (isCreating) {

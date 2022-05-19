@@ -42,9 +42,7 @@ export const ThreadMessageInput = props => {
       <div className="thread-message-input__input">
         {giphyState && <GiphyIcon />}
         <ChatAutoComplete onChange={onChange} rows={1} placeholder="Reply" />
-        <div className="thread-message-input__icons">
-          {/* <SmileyFace openEmojiPicker={messageInput.openEmojiPicker} /> */}
-        </div>
+        <div className="thread-message-input__icons" />
         <div
           className="thread-message-input__button"
           role="button"

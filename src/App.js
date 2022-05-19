@@ -53,6 +53,17 @@ const App = () => {
     getToken();
   }, [getToken]);
 
+  useEffect(() => {
+    const updateUserImage = async () => {
+      await client.upsertUser({
+        id: 'geuni620',
+        image:
+          'https://i.ibb.co/WD0N0pt/C09-A1-E94-2284-45-A4-8-C68-6-AB1-FB4688-D3-1-105-c.jpg',
+      });
+    };
+    updateUserImage();
+  });
+
   return (
     <div className="App">
       {getUserId() === null && !isLogged ? (
