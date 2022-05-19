@@ -17,6 +17,12 @@ export const TeamChannelPreview = props => {
     putTheMessage();
   }, [putTheMessage]);
 
+  const deleteChannel = async () => {
+    if (window.confirm('삭제하시겠습니까?')) {
+      await channel.delete();
+    }
+  };
+
   const DirectPreview = () => {
     const members = Object.values(channel.state.members).filter(
       ({ user }) => user.id !== client.userID
@@ -37,6 +43,12 @@ export const TeamChannelPreview = props => {
               {members[0]?.user.name || members[0]?.user.id || 'Hyojeong'}
             </p>
             <p className="channel-preview__item--content">{lastMessage}</p>
+          </div>
+          <div
+            className="channel-preview__item--delete"
+            onClick={deleteChannel}
+          >
+            Delete
           </div>
         </div>
       );
@@ -63,6 +75,9 @@ export const TeamChannelPreview = props => {
             {members[2] ? '...' : null}
           </p>
           <p className="channel-preview__item--content">{lastMessage}</p>
+        </div>
+        <div className="channel-preview__item--delete" onClick={deleteChannel}>
+          Delete
         </div>
       </div>
     );

@@ -21,7 +21,7 @@ const ContactsDashboard = ({ user, setIsChannelShowed, isChannelShowed }) => {
 
   const showChannel = async () => {
     const channel = client.channel('messaging', {
-      members: ['hyodduru', id],
+      members: ['geuni620', id],
     });
 
     await channel.watch();

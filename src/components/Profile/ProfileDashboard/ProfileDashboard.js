@@ -53,7 +53,7 @@ const ProfileDashboard = () => {
 
     const updateUserImage = async () => {
       await client.upsertUser({
-        id: 'hyodduru',
+        id: 'geuni620',
         image: imageList[1]?.dataURL,
       });
     };

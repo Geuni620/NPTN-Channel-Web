@@ -48,6 +48,7 @@ const Nav = () => {
     };
 
     getAvatar();
+    // FIX: 리펙토링 시 수정 필요
   }, []);
 
   return (

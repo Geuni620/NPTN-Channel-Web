@@ -67,6 +67,8 @@
   border-radius: 50%;
   box-sizing: border-box;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
 
 .avatar__img {
