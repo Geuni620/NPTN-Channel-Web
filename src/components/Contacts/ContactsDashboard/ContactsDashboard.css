@@ -40,6 +40,11 @@
   text-align: center;
 }
 
+.contacts-dashboard .avatar {
+  display: flex;
+  justify-content: center;
+}
+
 .btn {
   position: absolute;
   top: 170px;
@@ -70,4 +75,93 @@
 
 .channelContainer > .channel__container {
   left: 0px;
+}
+
+.channelContainer {
+  position: absolute;
+  left: 560px;
+  right: 0px;
+  top: 0px;
+  left: 0;
+  bottom: 0px;
+  background: #f4f5f7;
+  border-left: 1px solid #ebecf0;
+  display: flex;
+  flex-direction: column;
+}
+
+.channelContainer .container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 560px;
+  right: 0px;
+  top: 0px;
+  left: 0;
+  width: 100%;
+}
+
+.channelContainer .container > .str-chat__list {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.channelContainer
+  .container
+  > .str-chat__input-flat
+  .str-chat__textarea
+  > textarea,
+.channelContainer
+  .container
+  > .str-chat__input-flat
+  .str-chat__textarea
+  > textarea::placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 50px;
+  height: 40px;
+  width: 98%;
+  margin: auto;
+  background: #f4f5f7;
+  border-radius: 3px;
+  margin: 8px 0;
+  line-height: 40px;
+  overflow: hidden;
+}
+
+.team-message-input__input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-message-input__top {
+  width: 720px;
+}
+
+.channelContainer
+  .container
+  > .str-chat__input-flat
+  .str-chat__textarea
+  > textarea::placeholder {
+  line-height: 20px;
+  padding: 8px;
+}
+
+.str-chat__textarea textarea {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: #fff;
+}
+
+.str-chat__input-flat--textarea-wrapper
+  > .str-chat__emojiselect-wrapper
+  > .str-chat__input-flat-emojiselect {
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
 }

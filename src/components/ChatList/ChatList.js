@@ -18,7 +18,7 @@ const ChatList = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <div>
+    <div className="chatList">
       <ChannelListContainer
         className="chat-list"
         {...{

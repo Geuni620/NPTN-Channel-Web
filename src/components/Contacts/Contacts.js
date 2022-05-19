@@ -1,18 +1,16 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
 import { useChatContext, Avatar } from 'stream-chat-react';
-
 import _debounce from 'lodash.debounce';
-
-import './Contacts.css';
+import AddContactModal from './AddContactModal/AddContactModal';
 import ContactsDashboard from './ContactsDashboard/ContactsDashboard';
 import { UserPlus, SearchIcon, Silders } from '../../assets/Icons';
 import { BiUser } from 'react-icons/bi';
 import { Success } from '../../assets/Icons';
-import AddContactModal from './AddContactModal/AddContactModal';
 import { getDoc, doc } from '@firebase/firestore';
 import { db } from '../../service/firebase';
 import { getUserId } from '../../utils';
+import './Contacts.css';
 
 const Contacts = () => {
   const { client } = useChatContext();

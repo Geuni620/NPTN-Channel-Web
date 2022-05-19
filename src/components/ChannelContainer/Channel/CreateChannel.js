@@ -33,7 +33,7 @@ export const CreateChannel = props => {
       setSelectedUsers([client.userID]);
       setActiveChannel(newChannel);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

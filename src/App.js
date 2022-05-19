@@ -5,7 +5,6 @@ import ListContainer from './components/ListContainer/ListContainer';
 import Login from './components/Login/Login';
 import { getUserId, setGetstreamToken } from './utils';
 import 'stream-chat-react/dist/css/index.css';
-import './App.css';
 
 import { Chat, enTranslations, Streami18n } from 'stream-chat-react';
 
@@ -13,13 +12,13 @@ import { Chat, enTranslations, Streami18n } from 'stream-chat-react';
 // const user = getUserId();
 // const apiKey = '4qaxnhjezwsf';
 
-const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
-const apiKey = '3hr22a3t59ef';
-const user = 'geuni620';
+// const userToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ2V1bmk2MjAifQ.mkwnEhGoPyjEsnkhcSt6SpdnL37-1nYh9MFKo6K9wF4`;
+//const user = 'geuni620';
 
-// const userToken =
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaHlvZGR1cnUifQ.kFj-vrP-WDohgVgt3531T0OsMfoDQZ9esqjivRATf1w';
-// const user = 'hyodduru';
+const apiKey = '3hr22a3t59ef';
+const userToken =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaHlvZGR1cnUifQ.kFj-vrP-WDohgVgt3531T0OsMfoDQZ9esqjivRATf1w';
+const user = 'hyodduru';
 
 const theme = 'light';
 
@@ -61,6 +60,16 @@ const App = () => {
           'https://i.ibb.co/WD0N0pt/C09-A1-E94-2284-45-A4-8-C68-6-AB1-FB4688-D3-1-105-c.jpg',
       });
     };
+
+    //to be deleted code
+    // useEffect(() => {
+    //   const updateUserImage = async () => {
+    //     await client.upsertUser({
+    //       id: 'hyodduru',
+    //       image: 'https://i.ibb.co/r4mrCJ7/IMG-9361.jpg',
+    //     });
+    //   };
+
     updateUserImage();
   });
 
@@ -69,12 +78,10 @@ const App = () => {
       {getUserId() === null && !isLogged ? (
         <Login setIsLogged={setIsLogged} />
       ) : (
-        <>
+        <Chat {...{ client, i18nInstance }} theme={`team ${theme}`}>
           <Nav />
-          <Chat {...{ client, i18nInstance }} theme={`team ${theme}`}>
-            <ListContainer />
-          </Chat>
-        </>
+          <ListContainer />
+        </Chat>
       )}
     </div>
   );

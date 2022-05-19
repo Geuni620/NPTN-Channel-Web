@@ -26,7 +26,6 @@
 header > .close {
   width: 15px;
   cursor: pointer;
-
   background-color: red;
 }
 
