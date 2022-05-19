@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Avatar,
-  useChannelActionContext,
   useChannelStateContext,
   useChatContext,
 } from 'stream-chat-react';
@@ -9,10 +8,9 @@ import {
 import { SearchIconDash, InfoIcon, PhoneIcon } from '../../../assets/Icons';
 import './TeamChannelHeader.css';
 
-export const TeamChannelHeader = ({ setIsEditing, setPinsOpen }) => {
+export const TeamChannelHeader = ({ setIsEditing }) => {
   const { client } = useChatContext();
-  const { closeThread } = useChannelActionContext();
-  const { channel, watcher_count } = useChannelStateContext();
+  const { channel } = useChannelStateContext();
 
   const teamHeader = `# ${channel.data.name || channel.data.id || 'random'}`;
 
@@ -53,12 +51,6 @@ export const TeamChannelHeader = ({ setIsEditing, setPinsOpen }) => {
         )}
       </div>
     );
-  };
-
-  const getWatcherText = watchers => {
-    if (!watchers) return 'No users online';
-    if (watchers === 1) return '1 user online';
-    return `${watchers} users online`;
   };
 
   return (

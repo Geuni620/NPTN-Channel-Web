@@ -68,7 +68,6 @@
 .str-chat__message-replies-count-button {
   z-index: 2;
   display: flex;
-  /* justify-content: flex-end; */
   font-family: Helvetica Neue, sans-serif;
   font-style: normal;
   font-weight: bold;

@@ -147,10 +147,10 @@
   line-height: 10px;
 }
 
-.thread-message-input__wrapper .str-chat__textarea textarea:focus {
-  border: none;
-  outline: none;
-  box-shadow: none;
+.str-chat__textarea textarea {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   background: #fff;
 }
 
