@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ChannelList } from 'stream-chat-react';
+import { Channel, ChannelList } from 'stream-chat-react';
 import { TeamChannelList } from './TeamChannel/TeamChannelList';
 import debounce from 'lodash.debounce';
 import { PlusBox, SearchIcon } from '../../assets/Icons';
