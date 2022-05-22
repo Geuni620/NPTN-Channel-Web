@@ -52,9 +52,6 @@
 * channel.watch() 활용하여 클릭한 user와 나의 채팅방 생성
 * onclick event 활용 
 
-## 참여대상
-
-- 김효정, 이근휘
 
 ## 사용한 Package
 
@@ -66,6 +63,7 @@
 - getstream
 - eslint
 - prettier
+- react-images-uploading
 
 ## 컨벤션 정리
 
