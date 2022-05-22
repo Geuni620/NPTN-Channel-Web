@@ -1,43 +1,21 @@
 # WECODE 기업협업
 
-### 참여대상
+## 프로젝트 소개
+* 프로젝트 주제 : firebase와 getstream api, React JS를 활용한 실시간 채팅 웹 만들기 
+* 프로젝트 진행 기간 : 4월 30일 ~ 5월 24일 
+* 구성 : Front-end 2명(김효정, 이근휘)
 
-- 김효정, 이근휘
 
-### 사용한 Package
+## 메인 서비스
+- 실시간 채팅 (일대일 및 그룹 채팅)
+- 친구 추가 및 단톡방 생성 및 삭제 
+- 채팅을 위한 프로필 관리 기능 
 
-- NPM(8.5.0)
-- node(16.14.2)
-- react
-- react-router-dom
-- react-redux
-- getstream
-- eslint
-- prettier
+## Demo
 
-### 컨벤션 정리
+<사진 올릴 것>
 
-- 최상단 CSS class명은 소문자
-- git rebase 사용
-
-### [CSS property 순서]
-
-1. Layout Properties (position, float, clear, display)
-
-2. Box Model Properties (width, height, margin, padding)
-3. Visual Properties (color, background, border, box-shadow)
-4. Typography Properties (font-size, font-family, text-align, text-transform)
-5. Misc Properties (cursor, overflow, z-index)
-
-### [Import property 순서]
-
-1. React 패키지
-
-2. 외부 라이브러리
-3. 컴포넌트
-4. 함수, 변수 및 설정 파일
-5. 사진 등 미디어 파일
-6. CSS 파일
+## 구현 기능 
 
 #### 1. firebase auth를 활용한 구글 소셜 로그인 기능 구현
 * firebase와 연동하여 구글 소셜 로그인 구현.
@@ -73,4 +51,42 @@
 * getstream api에서 제공하는 Chat, Channel, ChannelInput, MessageList, MessageInput 컴포넌트 활용
 * channel.watch() 활용하여 클릭한 user와 나의 채팅방 생성
 * onclick event 활용 
+
+## 참여대상
+
+- 김효정, 이근휘
+
+## 사용한 Package
+
+- NPM(8.5.0)
+- node(16.14.2)
+- react
+- react-router-dom
+- react-redux
+- getstream
+- eslint
+- prettier
+
+## 컨벤션 정리
+
+- 최상단 CSS class명은 소문자
+- git rebase 사용
+
+## [CSS property 순서]
+
+1. Layout Properties (position, float, clear, display)
+
+2. Box Model Properties (width, height, margin, padding)
+3. Visual Properties (color, background, border, box-shadow)
+4. Typography Properties (font-size, font-family, text-align, text-transform)
+5. Misc Properties (cursor, overflow, z-index)
+
+## [Import property 순서]
+
+1. React 패키지
+2. 외부 라이브러리
+3. 컴포넌트
+4. 함수, 변수 및 설정 파일
+5. 사진 등 미디어 파일
+6. CSS 파일
 
