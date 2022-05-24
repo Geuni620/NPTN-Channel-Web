@@ -15,7 +15,8 @@ export const TeamChannelPreview = props => {
 
   useEffect(() => {
     putTheMessage();
-  }, [putTheMessage]);
+    return putTheMessage();
+  }, []);
 
   const deleteChannel = async () => {
     if (window.confirm('삭제하시겠습니까?')) {
