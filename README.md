@@ -12,10 +12,32 @@
 - 채팅을 위한 프로필 관리 기능 
 
 ## Demo
+### 메인 화면
+![IMG_1711](https://user-images.githubusercontent.com/90507720/170426707-4eec9242-294a-4718-85e5-3bf8ebbbc18e.jpg)
+### 연락처 검색
+![연락처 검색](https://user-images.githubusercontent.com/90507720/170426731-1202a729-e95a-47c6-8801-91e60f2ac088.gif)
+### 연락처 추가
+![연락처 추가](https://user-images.githubusercontent.com/90507720/170426738-115150b5-216c-49fe-8317-a3aa4125fe81.gif)
+### 연락처 프로필 조회
+![연락처 프로필 조회](https://user-images.githubusercontent.com/90507720/170426742-d05455ba-ed24-4ce2-b479-ca1fb9335072.gif)
+### 일대일채팅
+![일대일채팅](https://user-images.githubusercontent.com/90507720/170426747-700f2b84-ee67-409b-98db-69adc908c631.gif)
+### 채팅방 만들기 
+![채팅방 만들기](https://user-images.githubusercontent.com/90507720/170426755-97509937-2365-4b66-83ca-686b6971741c.gif)
+### 채팅방 삭제
+![채팅방 삭제](https://user-images.githubusercontent.com/90507720/170426766-f3bd2638-bc12-4cd6-8edb-85d71823d061.gif)
+### 채팅 기능
+![채팅 기능](https://user-images.githubusercontent.com/90507720/170426752-4f043055-fe76-42fb-a331-115d88baa122.gif)
+### 파이어베이스 통신 기능 
+![파이어베이스](https://user-images.githubusercontent.com/90507720/170426772-104d3d9d-ed37-4707-9493-b62d96f4469c.gif)
+### 프로필 조회
+![프로필 조회](https://user-images.githubusercontent.com/90507720/170426788-0b26f7ed-cbd6-4bf1-835c-d05389a98dfb.gif)
+### chat 조회
+![chat 조회](https://user-images.githubusercontent.com/90507720/170426824-2df39f58-cc55-4816-833e-f4cf087670f6.gif)
+### 프로필 정보 변경 
+![프로필 정보 변경](https://user-images.githubusercontent.com/90507720/170426777-0cac9c0a-b056-495a-96bd-6db84ba4fe15.gif)
 
-<사진 올릴 것>
-
-## 구현 기능 
+## 구현 기능
 
 #### 1. firebase auth를 활용한 구글 소셜 로그인 기능 구현
 * firebase와 연동하여 구글 소셜 로그인 구현.
