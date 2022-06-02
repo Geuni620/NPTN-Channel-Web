@@ -12,10 +12,10 @@
 - 친구 추가 및 단톡방 생성 및 삭제
 - 채팅을 위한 프로필 관리 기능
 
-## 사용한 Package
+## 사용 기술
 
-- Webpack : NPM(8.5.0), node(16.14.2), eslint, prettier
-- Stack : React(17.0.2), React-router-dom(v6), react-redux(4.2.0), getstream, react-images-uploading
+- NPM(8.5.0), node(16.14.2), eslint, prettier
+- React(17.0.2), React-router-dom(v6), react-redux(4.2.0), getstream, react-images-uploading
 
 ## Demo
 
