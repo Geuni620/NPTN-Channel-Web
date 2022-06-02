@@ -17,6 +17,11 @@
 - NPM(8.5.0), node(16.14.2), eslint, prettier
 - React(17.0.2), React-router-dom(v6), react-redux(4.2.0), getstream, react-images-uploading
 
+## 회고
+
+- 이근휘 : https://velog.io/@geuni620/%ED%9A%8C%EA%B3%A0
+- 김효정 : https://velog.io/@hoje15v/4%EC%A3%BC-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85-%EC%9D%B8%ED%84%B4-%ED%9A%8C%EA%B3%A0%EB%A1%9D-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EC%B1%84%ED%8C%85-%EC%9B%B9-%EB%A7%8C%EB%93%A4%EA%B8%B0
+
 ## Demo
 
 ### 메인 화면
